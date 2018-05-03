@@ -1,0 +1,24 @@
+$Runbooks = Get-AzureRmAutomationRunbook -ResourceGroupName cpe-automation-rg -AutomationAccountName cpe-automation-dev
+
+$report = @()
+
+
+foreach ($Runbook in $Runbooks)
+{
+
+       $schedules = Get-AzureRmAutomationScheduledRunbook -ResourceGroupName cpe-automation-rg -AutomationAccountName cpe-automation-dev -RunbookName $Runbook.Name
+       foreach ($schedule in $schedules)
+       {
+         $value = Get-AzureRmAutomationSchedule -Name $Schedule.ScheduleName -AutomationAccountName $schedule.AutomationAccountName -ResourceGroupName $Schedule.ResourceGroupName
+         $row = New-Object psobject
+         $row | Add-Member -Type NoteProperty -Name 'Runbook Name' -Value $Runbook.Name
+         $row | Add-Member -Type NoteProperty -Name 'Schedule Name' -Value $value.Name
+         $row | Add-Member -Type NoteProperty -Name 'Start Time' -Value $value.StartTime
+         $row | Add-Member -Type NoteProperty -Name 'Expiry Time' -Value $value.ExpiryTime
+         $row | Add-Member -Type NoteProperty -Name 'Interval' -Value $value.Interval
+         $row | Add-Member -Type NoteProperty -Name 'Frequency' -Value $value.Frequency
+         $row | Add-Member -Type NoteProperty -Name 'Description' -Value $value.Description
+         $row | Add-Member -Type NoteProperty -Name 'IsEnabled' -Value $value.IsEnabled
+       $report = $report + $row
+    }
+}
