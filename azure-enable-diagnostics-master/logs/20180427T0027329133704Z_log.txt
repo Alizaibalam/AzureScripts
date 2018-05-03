@@ -1,0 +1,232 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180427102733
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 14740
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180427T0027329133704Z_log.txt
+Found 19 subscriptions test1
+Do you want to enable diagnostic in 'Retail-Development' subscription?
+Enabling diagnostics in 'Retail-Development' subscription
+
+
+Name             : [A142890@agl.com.au, 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8]
+Account          : A142890@agl.com.au
+SubscriptionName : Retail-Development
+TenantId         : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+Environment      : AzureCloud
+
+
+ProviderNamespace : microsoft.insights
+RegistrationState : Registered
+ResourceTypes     : {components, webtests, queries, scheduledqueryrules...}
+Locations         : {East US, South Central US, North Europe, West Europe...}
+ZoneMappings      :
+
+Get-AzureVM : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up your 
+Azure credentials.
+At C:\temp\azure-enable-diagnostics-master\ClassicModule.ps1:89 char:20
++             $vms = Get-AzureVM
++                    ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+Get-AzureVM : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up
+your Azure credentials.
+At C:\temp\azure-enable-diagnostics-master\ClassicModule.ps1:89 char:20
++             $vms = Get-AzureVM
++                    ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+
+Found 1 virtual machines
+Acquiring storage accounts
+Checking storage in each resource group and location
+Getting existing storage accounts
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Where-Object): "You cannot call a method on a null-valued expression."
+>> TerminatingError(Where-Object): "You cannot call a method on a null-valued expression."
+>> TerminatingError(Where-Object): "You cannot call a method on a null-valued expression."
+Failed to enable diagnostic for 'Retail-Development' subscription
+Where : You cannot call a method on a null-valued expression.
+At C:\temp\azure-enable-diagnostics-master\ClassicModule.ps1:32 char:53
++ ... AzureRMStorageAccount | Where {$_.AccountType.StartsWith("Standard")}
++                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Where-Object], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull,Microsoft.PowerShell.Commands.WhereObjectCommand
+
+Do you want to enable diagnostic in 'Citrix-7-DR' subscription?
+
+
+PS C:\temp\azure-enable-diagnostics-master> get-azurevm
+get-azurevm : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up your 
+Azure credentials.
+At line:1 char:1
++ get-azurevm
++ ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+get-azurevm : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up
+your Azure credentials.
+At line:1 char:1
++ get-azurevm
++ ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+
+PS C:\temp\azure-enable-diagnostics-master> Add-AzureAccount
+
+Id                 Type Subscriptions                        Tenants
+--                 ---- -------------                        -------
+A142890@agl.com.au User 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8 {123913b9-915d-4d67-aaf9-ce327e8fc59f}
+
+
+PS C:\temp\azure-enable-diagnostics-master> get-azurevm
+get-azurevm : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up your 
+Azure credentials.
+At line:1 char:1
++ get-azurevm
++ ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+get-azurevm : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up
+your Azure credentials.
+At line:1 char:1
++ get-azurevm
++ ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+
+PS C:\temp\azure-enable-diagnostics-master> Clear-AzureProfile -Force
+PS C:\temp\azure-enable-diagnostics-master> Add-AzureAccount
+
+Id                 Type Subscriptions                        Tenants
+--                 ---- -------------                        -------
+A142890@agl.com.au User 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8 {123913b9-915d-4d67-aaf9-ce327e8fc59f}
+
+
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureVM
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureAccount
+
+Id                 Type Subscriptions                        Tenants
+--                 ---- -------------                        -------
+A142890@agl.com.au User 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8 {123913b9-915d-4d67-aaf9-ce327e8fc59f}
+
+
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureVM -Verbose
+
+ServiceName Name      Status
+----------- ----      ------
+AZSACL001   AZSAW0004 StoppedDeallocated
+AZSACL001   AZSAW0005 StoppedDeallocated
+AZSACL001   AZSAW0006 ReadyRole
+AZSACL001   AZSAW0007 ReadyRole
+AZSACL001   AZSAW0008 ReadyRole
+AZSACL001   AZSAW0011 StoppedDeallocated
+AZSACL001   AZSAW0015 StoppedDeallocated
+AZSACL001   AZSAW0017 ReadyRole
+AZSACL001   AZSAW0018 StoppedDeallocated
+AZSACL003   AZSAW0027 StoppedDeallocated
+AZSACL003   AZSAW0029 StoppedDeallocated
+AZSACL003   AZSAW0031 StoppedDeallocated
+AZSACL003   AZSAW0032 ReadyRole
+AZSACL003   AZSAW0033 ReadyRole
+AZSACL003   AZSAW0036 StoppedDeallocated
+AZSACL006   AZSAW0049 ReadyRole
+AZSACL006   AZSAW0050 ReadyRole
+AZSACL006   AZSAW0051 ReadyRole
+AZSACL007   AZSAW0075 ReadyRole
+AZSACL009   AZSAW0083 StoppedDeallocated
+AZSACL009   AZSAW0089 ReadyRole
+AZSACL015   AZSAW0102 StoppedDeallocated
+AZSACL015   AZSAW0103 StoppedDeallocated
+AZSACL015   AZSAW0105 StoppedDeallocated
+AZSACL016   AZSAW0113 StoppedDeallocated
+AZSACL016   AZSAW0121 StoppedDeallocated
+AZSACL020   AZSAW0120 ReadyRole
+AZSACL021   AZSAW0249 StoppedDeallocated
+AZSACL021   AZSAW0250 StoppedDeallocated
+AZSACL025   AZSAW0150 StoppedDeallocated
+AZSACL036   AZSAW0174 StoppedDeallocated
+AZSACL038   AZSAW0176 ReadyRole
+AZSACL038   AZSAW0177 ReadyRole
+AZSACL063   AZSAW0216 ReadyRole
+AZSACL063   AZSAW0217 ReadyRole
+AZSACL066   AZSAW0221 ReadyRole
+AZSACL066   AZSAW0222 ReadyRole
+AZSACL066   AZSAW0223 ReadyRole
+AZSACL072   AZSAW0219 ReadyRole
+AZSACL072   AZSAW0220 ReadyRole
+AZSACL076   AZSAW0241 StoppedDeallocated
+AZSACL076   AZSAW0243 ReadyRole
+AZSACL076   AZSAW0244 ReadyRole
+AZSACL076   AZSAW0245 ReadyRole
+AZSACL076   AZSAW0246 ReadyRole
+AZSACL079   AZSAW0255 StoppedDeallocated
+AZSACL081   AZSAW0260 ReadyRole
+AZSACL081   AZSAW0261 ReadyRole
+AZSACL081   AZSAW0262 ReadyRole
+AZSACL082   AZSAW0263 StoppedDeallocated
+AZSACL082   AZSAW0264 StoppedDeallocated
+AZSACL082   AZSAW0265 StoppedDeallocated
+AZSACL084   AZSAL0019 ReadyRole
+azsacl085   AZSAW0270 StoppedDeallocated
+azsacl085   AZSAW0271 StoppedDeallocated
+AZSACL086   AZSAW0272 ReadyRole
+AZSACL086   AZSAW0273 ReadyRole
+AZSACL089   AZSAW0275 StoppedDeallocated
+AZSACL096   AZSAW0294 ReadyRole
+AZSACL096   AZSAW0295 ReadyRole
+AZSACL102   AZSAW0318 ReadyRole
+AZSACL102   AZSAW0319 ReadyRole
+AZSACL102   AZSAW0320 ReadyRole
+AZSACL102   AZSAW0321 ReadyRole
+AZSACL105   AZSAW0329 StoppedDeallocated
+AZSACL105   AZSAW0330 StoppedDeallocated
+AZSACL105   AZSAW0331 StoppedDeallocated
+AZSACL105   AZSAW0332 StoppedDeallocated
+azsacl115   AZSAW0365 StoppedDeallocated
+azsacl119   AZSAW0013 StoppedDeallocated
+azsacl119   AZSAW0014 StoppedDeallocated
+azsacl120   AZSAW0151 StoppedDeallocated
+azsacl121   AZSAW0152 StoppedDeallocated
+azsacl123   AZSAW0178 StoppedDeallocated
+azsacl123   AZSAW0179 StoppedDeallocated
+azsacl124   AZSAW0253 StoppedDeallocated
+azsacl124   AZSAW0254 StoppedDeallocated
+
+
+PS C:\temp\azure-enable-diagnostics-master> csl
+csl : The term 'csl' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ csl
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (csl:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+csl : The term 'csl' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ csl
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (csl:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\temp\azure-enable-diagnostics-master> cls
+PS C:\temp\azure-enable-diagnostics-master> .\EnableDiag.ps1 –DeploymentModel 'Classic' -ChooseSubscription -StoragePerLocation
+**********************
+Windows PowerShell transcript end
+End time: 20180427103952
+**********************

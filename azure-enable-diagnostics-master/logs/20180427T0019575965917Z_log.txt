@@ -1,0 +1,94 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180427101957
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 14740
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180427T0019575965917Z_log.txt
+Found 19 subscriptions test1
+Do you want to enable diagnostic in 'Retail-Development' subscription?
+Enabling diagnostics in 'Retail-Development' subscription
+
+
+Name             : [A142890@agl.com.au, 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8]
+Account          : A142890@agl.com.au
+SubscriptionName : Retail-Development
+TenantId         : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+Environment      : AzureCloud
+
+
+ProviderNamespace : microsoft.insights
+RegistrationState : Registered
+ResourceTypes     : {components, webtests, queries, scheduledqueryrules...}
+Locations         : {East US, South Central US, North Europe, West Europe...}
+ZoneMappings      :
+
+Get-AzureVM : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up your 
+Azure credentials.
+At C:\temp\azure-enable-diagnostics-master\ClassicModule.ps1:90 char:20
++             $vms = Get-AzureVM
++                    ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+Get-AzureVM : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up
+your Azure credentials.
+At C:\temp\azure-enable-diagnostics-master\ClassicModule.ps1:90 char:20
++             $vms = Get-AzureVM
++                    ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+
+Found 1 virtual machines
+Acquiring storage accounts
+Checking storage in each resource group and location
+Getting existing storage accounts
+Get-AzureStorageAccount : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to 
+set up your Azure credentials.
+At C:\temp\azure-enable-diagnostics-master\ClassicModule.ps1:32 char:25
++         $storageAccounts = Get-AzureStorageAccount | Where {$_.Accoun ...
++                            ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureStorageAccount], ArgumentException
+    + FullyQualifiedErrorId : 
+Microsoft.WindowsAzure.Commands.ServiceManagement.StorageServices.GetAzureStorageAccountCommand
+Get-AzureStorageAccount : Your Azure credentials have not been set up or have expired, please run
+Add-AzureAccount to set up your Azure credentials.
+At C:\temp\azure-enable-diagnostics-master\ClassicModule.ps1:32 char:25
++         $storageAccounts = Get-AzureStorageAccount | Where {$_.Accoun ...
++                            ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureStorageAccount], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.StorageServices.GetAzureStorageA
+   ccountCommand
+
+Checking storage in '' location
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(EnsureResourceGroupExists): "Cannot bind argument to parameter 'Location' because it is an empty string."
+>> TerminatingError(EnsureResourceGroupExists): "Cannot bind argument to parameter 'Location' because it is an empty string."
+Failed to enable diagnostic for 'Retail-Development' subscription
+EnsureResourceGroupExists : Cannot bind argument to parameter 'Location' because it is an empty string.
+At C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1:98 char:87
++ ... GroupExists -ResourceGroupName $resourceGroupName -Location $location
++                                                                 ~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnsureResourceGroupExists], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,EnsureResourceGroupExists
+
+Do you want to enable diagnostic in 'Citrix-7-DR' subscription?
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\temp\azure-enable-diagnostics-master> .\EnableDiag.ps1 –DeploymentModel 'Classic' -ChooseSubscription -StoragePerLocation
+**********************
+Windows PowerShell transcript end
+End time: 20180427102732
+**********************

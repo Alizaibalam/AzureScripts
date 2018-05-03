@@ -1,0 +1,69 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180426101412
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\WINDOWS\syswow64\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 17000
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180426T0014123991306Z_log.txt
+Found 19 subscriptions
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(CreateSubscriptionResultObject): "Cannot bind argument to parameter 'SubscriptionName' because it is an empty string."
+>> TerminatingError(EnableDiag.ps1): "Cannot bind argument to parameter 'SubscriptionName' because it is an empty string."
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot bind argument to parameter 'SubscriptionName' because 
+it is an empty string.
+At line:1 char:1
++ .\EnableDiag.ps1 -DeploymentModel 'Arm' -ChooseSubscription -ChooseSt ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,EnableDiag.ps1
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot bind argument to parameter 'SubscriptionName' because it is an empty string.
+At line:1 char:1
++ .\EnableDiag.ps1 -DeploymentModel 'Arm' -ChooseSubscription -ChooseSt ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,EnableDiag.ps1
+
+PS C:\temp\azure-enable-diagnostics-master> install-mode Azure
+install-mode : The term 'install-mode' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ install-mode Azure
++ ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (install-mode:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+install-mode : The term 'install-mode' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a
+path was included, verify that the path is correct and try again.
+At line:1 char:1
++ install-mode Azure
++ ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (install-mode:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\temp\azure-enable-diagnostics-master> Install-Module Azure
+NuGet provider is required to continue
+PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files (x86)\PackageManagement\ProviderAssemblies' or 'C:\Users\Syed\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider now?
+&Yes  &No  &Suspend
+Y
+Untrusted repository
+You are installing the modules from an untrusted repository. If you trust this repository, change its InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from 'PSGallery'?
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+WARNING: Version '4.4.1' of module 'Azure' is already installed at 'C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ServiceManagement\Azure'. To install version '5.1.2', run Install-Module and add the -Force parameter, this command will install version '5.1.2' in side-by-side with version '4.4.1'.
+PS C:\temp\azure-enable-diagnostics-master> Install-Module Azure -Force
+PS C:\temp\azure-enable-diagnostics-master> Install-Module AzureRM -Force
+PS C:\temp\azure-enable-diagnostics-master> .\EnableDiag.ps1 -DeploymentModel 'Arm' -ChooseSubscription -ChooseVM -ChooseStorage
+**********************
+Windows PowerShell transcript end
+End time: 20180426103244
+**********************

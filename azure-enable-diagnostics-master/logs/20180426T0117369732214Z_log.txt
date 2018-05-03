@@ -1,0 +1,40 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180426111737
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1
+Process ID: 3292
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180426T0117369732214Z_log.txt
+Login-AzureRmAccount : authentication_canceled: User canceled authentication
+At C:\temp\azure-enable-diagnostics-master\ArmModule.ps1:10 char:20
++         $default = Login-AzureRmAccount
++                    ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Connect-AzureRmAccount], AadAuthenticationCanceledException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ConnectAzureRmAccountCommand
+Login-AzureRmAccount : authentication_canceled: User canceled authentication
+At C:\temp\azure-enable-diagnostics-master\ArmModule.ps1:10 char:20
++         $default = Login-AzureRmAccount
++                    ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Connect-AzureRmAccount], AadAuthenticationCanceledException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ConnectAzureRmAccountCommand
+
+Found 19 subscriptions test1
+Do you want to enable diagnostic in 'Citrix-7-DR' subscription?
+PS C:\temp\azure-enable-diagnostics-master> cls
+PS C:\temp\azure-enable-diagnostics-master> .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseVM -ChooseStorage -StoragePerLocation
+**********************
+Windows PowerShell transcript end
+End time: 20180426111853
+**********************

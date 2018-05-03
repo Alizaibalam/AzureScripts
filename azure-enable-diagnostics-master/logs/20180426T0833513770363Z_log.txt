@@ -1,0 +1,66 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180426183351
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 16220
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180426T0833513770363Z_log.txt
+Found 19 subscriptions test1
+Do you want to enable diagnostic in 'Citrix-7-DR' subscription?
+Do you want to enable diagnostic in 'Philology-AGL' subscription?
+Do you want to enable diagnostic in 'Innovation-Ideas-Non-Production' subscription?
+Do you want to enable diagnostic in 'Merchant-Development' subscription?
+Do you want to enable diagnostic in 'Business-Analytics-Development' subscription?
+Do you want to enable diagnostic in 'ISG-Development' subscription?
+Do you want to enable diagnostic in 'Visual-Studio-Online-Development' subscription?
+Do you want to enable diagnostic in 'Security-SOC-Sandbox' subscription?
+Do you want to enable diagnostic in 'Retail-Development' subscription?
+Enabling diagnostics in 'Retail-Development' subscription
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Import-Module): "Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'."
+Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.
+>> TerminatingError(SelectSubscription): "The 'Select-AzureSubscription' command was found in the module 'Azure', but the module could not be loaded. For more information, run 'Import-Module Azure'."
+Failed to enable diagnostic for 'Retail-Development' subscription
+SelectSubscription : The 'Select-AzureSubscription' command was found in the module 'Azure', but the module could not
+be loaded. For more information, run 'Import-Module Azure'.
+At C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1:359 char:3
++         SelectSubscription $subscriptionId
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Select-AzureSubscription:String) [SelectSubscription], CommandNotFoundE
+   xception
+    + FullyQualifiedErrorId : CouldNotAutoloadMatchingModule,SelectSubscription
+
+Do you want to enable diagnostic in 'Microsoft Azure Enterprise' subscription?
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Import-Module): "Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'."
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Import-Module): "Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'."
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Import-Module): "Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'."
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Import-Module): "Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'."
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Import-Module): "Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'."
+PS C:\temp\azure-enable-diagnostics-master> Import-Module Azure
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Import-Module): "Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'."
+Import-Module : Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 
+'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.
+At line:1 char:1
++ Import-Module Azure
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Import-Module], TypeLoadException
+    + FullyQualifiedErrorId : System.TypeLoadException,Microsoft.PowerShell.Commands.ImportModuleCommand
+Import-Module : Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly
+'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.
+At line:1 char:1
++ Import-Module Azure
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Import-Module], TypeLoadException
+    + FullyQualifiedErrorId : System.TypeLoadException,Microsoft.PowerShell.Commands.ImportModuleCommand
+

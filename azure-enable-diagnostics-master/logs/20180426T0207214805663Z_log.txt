@@ -1,0 +1,1293 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180426120721
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1
+Process ID: 3292
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180426T0207214805663Z_log.txt
+Found 19 subscriptions test1
+Do you want to enable diagnostic in 'Citrix-7-DR' subscription?
+Do you want to enable diagnostic in 'Philology-AGL' subscription?
+Do you want to enable diagnostic in 'Innovation-Ideas-Non-Production' subscription?
+Do you want to enable diagnostic in 'Merchant-Development' subscription?
+Do you want to enable diagnostic in 'Business-Analytics-Development' subscription?
+Do you want to enable diagnostic in 'ISG-Development' subscription?
+Do you want to enable diagnostic in 'Visual-Studio-Online-Development' subscription?
+Do you want to enable diagnostic in 'Security-SOC-Sandbox' subscription?
+Do you want to enable diagnostic in 'Retail-Development' subscription?
+Enabling diagnostics in 'Retail-Development' subscription
+
+
+Name             : [A142890@agl.com.au, 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8]
+Account          : A142890@agl.com.au
+SubscriptionName : Retail-Development
+TenantId         : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+Environment      : AzureCloud
+
+
+ProviderNamespace : microsoft.insights
+RegistrationState : Registered
+ResourceTypes     : {components, webtests, queries, scheduledqueryrules...}
+Locations         : {East US, South Central US, North Europe, West Europe...}
+ZoneMappings      :
+
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Found 91 virtual machines
+Acquiring storage accounts
+Checking storage in each resource group and location
+Getting existing storage accounts
+Checking storage in 'australiaeast' location
+Using 'azsaw0429st01' storage account in location 'australiaeast'
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0410' virtual machine
+Enabling diagnostics
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : fcde9fad-3332-48fd-a376-95eec22dcefe"
+>> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : fcde9fad-3332-48fd-a376-95eec22dcefe"
+>> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : fcde9fad-3332-48fd-a376-95eec22dcefe"
+Failed to enable diagnostic for 'azsaw0410' VM
+Set-AzureRmVMDiagnosticsExtension : Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension
+'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in
+input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension
+'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in
+input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : fcde9fad-3332-48fd-a376-95eec22dcefe
+At C:\temp\azure-enable-diagnostics-master\ArmModule.ps1:167 char:17
++ ...             Set-AzureRmVMDiagnosticsExtension -ResourceGroupName $Res ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzureRmVMDiagnosticsExtension], ComputeCloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Compute.SetAzureRmVMDiagnosticsExtensionCommand
+
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0411' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0412' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0413' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0414' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0415' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0416' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0417' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0418' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0419' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0420' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0421' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0422' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0126' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0127' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0134' virtual machine
+Enabling diagnostics
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 76311ba6-3f17-473f-984b-944de9ebf066"
+>> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 76311ba6-3f17-473f-984b-944de9ebf066"
+>> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 76311ba6-3f17-473f-984b-944de9ebf066"
+Failed to enable diagnostic for 'AZSAW0134' VM
+Set-AzureRmVMDiagnosticsExtension : Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension
+'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in
+input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension
+'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in
+input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 76311ba6-3f17-473f-984b-944de9ebf066
+At C:\temp\azure-enable-diagnostics-master\ArmModule.ps1:167 char:17
++ ...             Set-AzureRmVMDiagnosticsExtension -ResourceGroupName $Res ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzureRmVMDiagnosticsExtension], ComputeCloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Compute.SetAzureRmVMDiagnosticsExtensionCommand
+
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0135' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0470' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0471' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0256' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0257' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0258' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0259' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0266' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0267' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0268' virtual machine
+Enabling diagnostics
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 4f07b79f-a42b-418e-86d8-0502084c6727"
+>> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 4f07b79f-a42b-418e-86d8-0502084c6727"
+>> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 4f07b79f-a42b-418e-86d8-0502084c6727"
+Failed to enable diagnostic for 'AZSAW0268' VM
+Set-AzureRmVMDiagnosticsExtension : Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension
+'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in
+input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension
+'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in
+input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 4f07b79f-a42b-418e-86d8-0502084c6727
+At C:\temp\azure-enable-diagnostics-master\ArmModule.ps1:167 char:17
++ ...             Set-AzureRmVMDiagnosticsExtension -ResourceGroupName $Res ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzureRmVMDiagnosticsExtension], ComputeCloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Compute.SetAzureRmVMDiagnosticsExtensionCommand
+
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0269' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAVD041' virtual machine
+Enabling diagnostics
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 3396c844-7dbf-424d-9b90-b66e59765295"
+>> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 3396c844-7dbf-424d-9b90-b66e59765295"
+>> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 3396c844-7dbf-424d-9b90-b66e59765295"
+Failed to enable diagnostic for 'AZSAVD041' VM
+Set-AzureRmVMDiagnosticsExtension : Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension
+'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in
+input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension
+'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in
+input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 3396c844-7dbf-424d-9b90-b66e59765295
+At C:\temp\azure-enable-diagnostics-master\ArmModule.ps1:167 char:17
++ ...             Set-AzureRmVMDiagnosticsExtension -ResourceGroupName $Res ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzureRmVMDiagnosticsExtension], ComputeCloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Compute.SetAzureRmVMDiagnosticsExtensionCommand
+
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAVD042' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAVD043' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0398' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0399' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0400' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0427' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0428' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0429' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'azsaw0430' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0287' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0288' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0329' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0330' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0331' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0332' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0153' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0154' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0013' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0014' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0015' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0029' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0083' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0174' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0004' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0005' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0011' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0103' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0105' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0249' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0250' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0263' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0275' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0018' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0031' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0121' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+VM agent on 'AZSAW0178' is not ready
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0179' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0027' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0036' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0102' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0150' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0264' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0270' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0271' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0026' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0168' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0169' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0170' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0171' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0242' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0253' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0254' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0255' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0265' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0113' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0151' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0152' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0241' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0215' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0344' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0345' virtual machine
+Enabling diagnostics
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 5920f989-a9a4-4080-8379-bdfef2b43a0b"
+>> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 5920f989-a9a4-4080-8379-bdfef2b43a0b"
+>> TerminatingError(Set-AzureRmVMDiagnosticsExtension): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension 'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 5920f989-a9a4-4080-8379-bdfef2b43a0b"
+Failed to enable diagnostic for 'AZSAW0345' VM
+Set-AzureRmVMDiagnosticsExtension : Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension
+'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in
+input.
+ErrorCode: BadRequest
+ErrorMessage: Multiple VMExtensions per handler not supported for OS type 'Windows'. VMExtension
+'Microsoft.Insights.VMDiagnosticsSettings' with handler 'Microsoft.Azure.Diagnostics.IaaSDiagnostics' already added or specified in
+input.
+StatusCode: 400
+ReasonPhrase: Bad Request
+OperationID : 5920f989-a9a4-4080-8379-bdfef2b43a0b
+At C:\temp\azure-enable-diagnostics-master\ArmModule.ps1:167 char:17
++ ...             Set-AzureRmVMDiagnosticsExtension -ResourceGroupName $Res ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzureRmVMDiagnosticsExtension], ComputeCloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Compute.SetAzureRmVMDiagnosticsExtensionCommand
+
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0346' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Enabling ARM diagnostics for 'AZSAW0347' virtual machine
+Enabling diagnostics
+
+RequestId           :
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Diagnostics enabled
+Do you want to enable diagnostic in 'Microsoft Azure Enterprise' subscription?
+Do you want to enable diagnostic in 'SAP-ERP-Production' subscription?
+Do you want to enable diagnostic in 'New-Energy-Development' subscription?
+Do you want to enable diagnostic in 'ISG-Production' subscription?
+Do you want to enable diagnostic in 'Business-Analytics-Production' subscription?
+Do you want to enable diagnostic in 'SAP-ERP-Non-Production' subscription?
+Do you want to enable diagnostic in 'Merchant-Production' subscription?
+Do you want to enable diagnostic in 'Security-Hunting-Sandbox' subscription?
+Do you want to enable diagnostic in 'Project-TOSCA-MSDN' subscription?
+Do you want to enable diagnostic in 'Security-Sandbox-Development' subscription?
+
+
+PS C:\temp\azure-enable-diagnostics-master> .\EnableDiag.ps1 –DeploymentModel 'Classic' -ChooseSubscription -StoragePerLocation
+**********************
+Windows PowerShell transcript end
+End time: 20180426183052
+**********************

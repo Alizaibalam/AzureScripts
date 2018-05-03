@@ -1,0 +1,60 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180426113656
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1
+Process ID: 3292
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180426T0136564030295Z_log.txt
+Found 19 subscriptions test1
+Do you want to enable diagnostic in 'Citrix-7-DR' subscription?
+Do you want to enable diagnostic in 'Philology-AGL' subscription?
+Do you want to enable diagnostic in 'Innovation-Ideas-Non-Production' subscription?
+Do you want to enable diagnostic in 'Merchant-Development' subscription?
+Do you want to enable diagnostic in 'Business-Analytics-Development' subscription?
+Do you want to enable diagnostic in 'ISG-Development' subscription?
+Do you want to enable diagnostic in 'Visual-Studio-Online-Development' subscription?
+Do you want to enable diagnostic in 'Security-SOC-Sandbox' subscription?
+Do you want to enable diagnostic in 'Retail-Development' subscription?
+Enabling diagnostics in 'Retail-Development' subscription
+
+
+Name             : [A142890@agl.com.au, 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8]
+Account          : A142890@agl.com.au
+SubscriptionName : Retail-Development
+TenantId         : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+Environment      : AzureCloud
+
+
+ProviderNamespace : microsoft.insights
+RegistrationState : Registered
+ResourceTypes     : {components, webtests, queries, scheduledqueryrules...}
+Locations         : {East US, South Central US, North Europe, West Europe...}
+ZoneMappings      :
+
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Found 91 virtual machines
+Acquiring storage accounts
+Checking storage in each resource group and location
+Getting existing storage accounts
+Checking storage in 'australiaeast' location
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\temp\azure-enable-diagnostics-master> .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -StoragePerLocation
+**********************
+Windows PowerShell transcript end
+End time: 20180426113824
+**********************

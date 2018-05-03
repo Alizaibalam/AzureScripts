@@ -1,0 +1,1 @@
+﻿.\EnableDiag.ps1 –DeploymentModel 'Classic' -ChooseSubscription -StoragePerLocation

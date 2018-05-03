@@ -1,0 +1,506 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180426110632
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1
+Process ID: 3292
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180426T0106320844945Z_log.txt
+Found 19 subscriptions test1
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(CreateSubscriptionResultObject): "Cannot bind argument to parameter 'SubscriptionName' because it is an empty string."
+>> TerminatingError(EnableDiag.ps1): "Cannot bind argument to parameter 'SubscriptionName' because it is an empty string."
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot bind argument to parameter 'SubscriptionName' because 
+it is an empty string.
+At line:1 char:1
++ .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseVM ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,EnableDiag.ps1
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot bind argument to parameter 'SubscriptionName' because it
+is an empty string.
+At line:1 char:1
++ .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseVM ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,EnableDiag.ps1
+
+PS C:\temp\azure-enable-diagnostics-master> 
+function CreateResultObject {
+
+    $statusProperties = @{
+        'RunType' = @{
+            'DeploymentModel'= $DeploymentModel;
+            'OverrideDiagnostics' = $OverrideDiagnostics;
+        }
+        'Subscriptions' = @();
+    }
+
+    return New-Object –TypeName PSObject –Prop $statusProperties
+}
+
+function CreateSubscriptionResultObject {
+    Param (
+        [Parameter(Mandatory=$true)]
+        [string] $SubscriptionName
+    )
+
+    $subscriptionProperties = @{
+        'SubscriptionName' = $SubscriptionName;
+        'StorageAccounts' = @()
+        'VirtualMachines' = @()
+        'Result' = @{'Status' = $null; 'ReasonOfFailure' = $null};
+    }
+
+    return New-Object –TypeName PSObject –Prop $subscriptionProperties
+}
+
+function CreateStorageAccountResultObject {
+    Param (
+        [Parameter(Mandatory=$true)]
+        [string] $StorageAccountName,
+        [Parameter(Mandatory=$true)]
+		[string] $ResourceGroupName,
+        [Parameter(Mandatory=$true)]
+		[string] $Location,
+        [string] $Status
+    )
+
+    $storageAccountProperties = @{
+        'StorageAccountName' = $StorageAccountName;
+        'ResourceGroupName' = $ResourceGroupName;
+        'Location' = $Location;
+        'Status' = $Status
+    }
+
+    return New-Object –TypeName PSObject –Prop $storageAccountProperties
+}
+
+function AcquireStorageAccounts() {
+    Param (
+	    [System.Object[]]$Vms,
+        [System.Object]$SubscriptionResult
+	)
+
+	Write-Host("Checking storage in each resource group and location")
+
+    $allStorages = LoadStorageAccounts
+	$storagesToUse = @{}
+    
+	$vmGroupedByLocation = $vms | Group-Object -Property Location
+
+	foreach ($vmLocationGroup in $vmGroupedByLocation) {
+
+	    $location =  $vmLocationGroup.Name;
+	    $locationStorages = $allStorages[$location]
+        $storagesToUse[$location] = @()
+
+	    Write-Host("Checking storage in '$location' location")
+
+        $storageToUse = $null
+        if ($StoragePerLocation) {
+            $input = Read-Host("Enter name for resource group (press enter to use 'DiagnosticStorageAccounts') for new storage accounts")
+
+            $resourceGroupName = if ($input) {$input} else {"DiagnosticStorageAccounts"}
+            EnsureResourceGroupExists -ResourceGroupName $resourceGroupName -Location $location
+
+            $storageToUse = AcquireStorageAccountsInGroup -SubscriptionResult $SubscriptionResult -ResourceGroupName $resourceGroupName -StoragesToLookIn $locationStorages -Location $location -AllStorages $allStorages -StoragesToUse $storagesToUse
+        } else {
+
+            $vmGroupedByResourceGroup = $vmLocationGroup.Group | Group-Object -Property ResourceGroupName
+	        foreach ($vmResourceGroupGroup in $vmGroupedByResourceGroup)
+	        {
+                $resourceGroupName = $vmResourceGroupGroup.Name
+                $resourceGroupStorages = $LocationStorages | where { $_.ResourceGroupName -eq $resourceGroupName  }
+		        $storageToUse = AcquireStorageAccountsInGroup -SubscriptionResult $SubscriptionResult -ResourceGroupName $resourceGroupName -StoragesToLookIn $resourceGroupStorages -Location $location -AllStorages $allStorages -StoragesToUse $storagesToUse
+	        }
+        }
+
+	}
+	return $storagesToUse
+}
+
+function AcquireStorageAccountsInGroup() {
+    Param (
+        [System.Object]$SubscriptionResult,
+        [String]$ResourceGroupName,
+        [String]$Location,
+        [System.Array]$StoragesToLookIn,
+        [Hashtable]$AllStorages,
+        [Hashtable]$StoragesToUse
+
+	)
+	$toCreate = $false
+    $storageAccountResult = $null
+
+    $storageToUse = $null
+    if ($StoragesToLookIn -ne $null) {
+        $storageToUse = SelectStorage $StoragesToLookIn -Location $Location -ResourceGroupName $ResourceGroupName
+	} 
+
+	if ($storageToUse -eq $null) {
+        $storageToUse = CreateStorage -ResourceGroupName $ResourceGroupName -Location $Location
+	    [array]$AllStorages[$location] += $storageToUse
+
+	    $storageName = $storageToUse.StorageAccountName
+        $storageAccountResult = CreateStorageAccountResultObject -StorageAccountName $storageName -ResourceGroupName $ResourceGroupName -Location $Location -Status "New"
+	    Write-Host("'$storageName' storage account for resource group '$ResourceGroupName' in location '$Location' was created")
+	}
+	else{
+	    $storageName = $storageToUse.StorageAccountName
+        $storageAccountResult = CreateStorageAccountResultObject -StorageAccountName $storageName -ResourceGroupName $storageToUse.ResourceGroupName -Location $Location -Status "Existing"
+
+        $message = $null
+        $message = if ($StoragePerLocation) {
+            "Using '$storageName' storage account in location '$Location'"
+        } else {
+            "Using '$storageName' storage account for resource group '$ResourceGroupName' in location '$Location'"
+        }
+	    Write-Host($message)
+	}
+
+	[array]$StoragesToUse[$location] += $storageToUse
+    $SubscriptionResult.StorageAccounts += $storageAccountResult
+}
+
+function EnsureResourceGroupExists {
+    Param (
+        [Parameter(Mandatory=$true)]
+        [String] $ResourceGroupName,
+        [Parameter(Mandatory=$true)]
+        [String] $Location
+    )
+
+    $rg = Get-AzureRmResourceGroup -Name $ResourceGroupName -ErrorAction Ignore
+    if ($rg) {
+        return
+    }
+
+    New-AzureRmResourceGroup -Name $ResourceGroupName -Location $Location
+}
+
+function SelectStorage() {
+    Param (
+        [Parameter(Mandatory=$true)]
+        [System.Object[]]$existsingStorageAccounts,
+        [string]$Location,
+        [string]$ResourceGroupName
+    )
+
+    if(!$ChooseStorage){
+        return $existsingStorageAccounts[0]
+    }
+
+    $message = if ($StoragePerLocation) {
+        "There are existing storage account/s in location '$location':"
+    } else {
+        "There are existing storage account/s for resource group '$resourceGroupName' in location '$location':"
+    }
+
+	Write-Host($message)
+    Write-Host("")
+
+	$storageName = $existsingStorageAccounts | foreach {Write-Host($_.StorageAccountName)}
+    Write-Host("")
+
+    $toSkip = ToSkip "Use one of them?" $ChooseStorage
+    if ($toSkip) {
+        return $null
+    }
+
+    $selectedStorage = $null
+    $chosen = $false
+    while (!$chosen) {
+        $choice = Read-Host ("Enter name of storage account you want to use")
+        $selectedStorage = $existsingStorageAccounts | where {$_.StorageAccountName -eq $choice}
+
+        $chosen = $selectedStorage -ne $null
+    }
+
+    return $selectedStorage
+}
+
+function CreateStorage() {
+    Param (
+        [Parameter(Mandatory=$true)]
+        [string]$ResourceGroupName,
+        [Parameter(Mandatory=$true)]
+        [string]$Location
+              
+    )
+
+    $storageName = $null
+	$storageName = GetStorageName $ResourceGroupName $Location $ChooseStorage
+    Write-Host("Creating storage account'$storageName' for resource group '$resourceGroupName' in location '$location'")
+
+	$retries = 0
+    $storageCreated = $false
+
+	while (!$storageCreated)
+	{
+        try {
+		    Write-Host("Creating '$storageName' storage account")
+            $storageToUse = CreateStorageAccount $resourceGroupName $storageName $location
+    
+		    $storageCreated = $true
+            return $storageToUse
+	    }
+	    catch {
+		    Write-Host("Failed to create storage")
+		    $_
+
+		    if  ($retries -ge 3) {
+			    Write-Host("Failed to create storage more than 3 times, terminating script")
+			    exit
+		    }
+		    Write-Host("Retry")
+		    $retries++;
+	    }
+	}
+}
+
+function ToSetDiagnostics(){
+	Param (
+        [Parameter(Mandatory=$true)]
+		[System.Object] $Vm,
+        [Parameter(Mandatory=$true)]
+		[System.Object] $virtualMachineResult
+	)
+    
+    $vmName = $Vm.Name
+    $isVmRunning = IsRunning $Vm
+    if (!$isVmRunning){
+        Write-Host("'$vmName' VM is not running")
+        $virtualMachineResult.Result.Status = "Skipped"
+        $virtualMachineResult.Result.ReasonOfFailure = "Vm is not running"
+        return $false
+    }
+
+    $isVmAgentReady = IsVmAgentReady $Vm
+    if (!$isVmAgentReady){
+        Write-Host("VM agent on '$vmName' is not ready")
+        $virtualMachineResult.Result.Status = "Skipped"
+        $virtualMachineResult.Result.ReasonOfFailure = "Vm agent is not ready"
+        return $false
+    }
+
+    if (ToSkip "Do you want to enable diagnostic for '$vmName'?" $ChooseVM){
+        $virtualMachineResult.Result.Status = "Skipped"
+        $virtualMachineResult.Result.ReasonOfFailure = "User choice"
+        return $false
+	}
+
+    $isEnabled = IsDiagnosticsEnabled $Vm
+    if (!$isEnabled){
+		return $true
+    }
+
+	Write-Host("Diagnostics already enabled for '$vmName'")
+	if ($OverrideDiagnostics) {
+		Write-Host("Overriding")
+        $virtualMachineResult.IsOverriden = $true
+		return $true
+	}
+
+    $virtualMachineResult.Result.Status = "Skipped"
+    $virtualMachineResult.Result.ReasonOfFailure = "Diagnostics already enabled"
+    return $false
+}
+
+function SetDiagnostics {
+    	Param (
+        [Parameter(Mandatory=$true)]
+		[System.Object] $vm,
+        [Parameter(Mandatory=$true)]
+        [System.Object] $storage
+	)
+
+    $cfgPath = $null
+
+    switch -Regex ($DeploymentModel){
+        "[Aa]rm" {$cfgPath = GetDiagnosticsConfigPath $path $vm.Id $vm.StorageProfile.OsDisk.OsType }
+        "[Cc]lassic" {$cfgPath = GetDiagnosticsConfigPath $path $vm.ResourceId $vm.ClassicResource.VM.OSVirtualHardDisk.OS}
+    }
+	 
+    SetVmDiagnostic $vm $storage $cfgPath
+}
+
+#######################################
+
+PS C:\temp\azure-enable-diagnostics-master> $subscriptions = LoadSubscriptions
+
+PS C:\temp\azure-enable-diagnostics-master> $subscriptions
+
+
+Name     : Citrix-7-DR
+Id       : 136e019a-7262-46b7-8268-6651ec788fac
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Philology-AGL
+Id       : 59dd17c0-d663-4eb5-8a12-3b34b9be7d9d
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Innovation-Ideas-Non-Production
+Id       : ab0ac574-8a1f-4841-b1ad-ba4319a38043
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Merchant-Development
+Id       : 3f94409a-9a22-4c8b-9801-29be55f2d8b6
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Business-Analytics-Development
+Id       : ee98be70-c656-466c-b353-d4ee20f44f68
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : ISG-Development
+Id       : b11cf078-0272-4e47-be40-f8e0dc958a04
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Visual-Studio-Online-Development
+Id       : 56febd12-c4d5-4008-a4fc-f421637ac9c5
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Security-SOC-Sandbox
+Id       : 3f798547-66b7-4f9e-87b9-451bf103e5bb
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Retail-Development
+Id       : 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Microsoft Azure Enterprise
+Id       : 9f94bed7-fd1a-4133-8db4-0f49ae2f4d26
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : SAP-ERP-Production
+Id       : db5b1ec8-aeac-48dc-972d-eb4f0f441816
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : New-Energy-Development
+Id       : 9385c91b-f897-4c37-9a5f-9d8dddd72b2f
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : ISG-Production
+Id       : ec196d28-a8ca-4c28-a3bc-249beafc2869
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Business-Analytics-Production
+Id       : ac83dcde-8bb2-464c-9953-c27613f17475
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : SAP-ERP-Non-Production
+Id       : 84a2113f-8769-4362-b1ea-fb65a58e1bc2
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Merchant-Production
+Id       : 6553a3e2-7173-426e-9902-f272b54784d8
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Security-Hunting-Sandbox
+Id       : 60d4db16-3db1-4e3f-bc0f-d05cb137b639
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Project-TOSCA-MSDN
+Id       : c7550957-9c95-4aec-b0f2-4df50b5526ab
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+Name     : Security-Sandbox-Development
+Id       : 1a77849a-0336-47ca-bad7-d0b986262094
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+
+
+PS C:\temp\azure-enable-diagnostics-master> $subscriptions.id
+136e019a-7262-46b7-8268-6651ec788fac
+59dd17c0-d663-4eb5-8a12-3b34b9be7d9d
+ab0ac574-8a1f-4841-b1ad-ba4319a38043
+3f94409a-9a22-4c8b-9801-29be55f2d8b6
+ee98be70-c656-466c-b353-d4ee20f44f68
+b11cf078-0272-4e47-be40-f8e0dc958a04
+56febd12-c4d5-4008-a4fc-f421637ac9c5
+3f798547-66b7-4f9e-87b9-451bf103e5bb
+2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8
+9f94bed7-fd1a-4133-8db4-0f49ae2f4d26
+db5b1ec8-aeac-48dc-972d-eb4f0f441816
+9385c91b-f897-4c37-9a5f-9d8dddd72b2f
+ec196d28-a8ca-4c28-a3bc-249beafc2869
+ac83dcde-8bb2-464c-9953-c27613f17475
+84a2113f-8769-4362-b1ea-fb65a58e1bc2
+6553a3e2-7173-426e-9902-f272b54784d8
+60d4db16-3db1-4e3f-bc0f-d05cb137b639
+c7550957-9c95-4aec-b0f2-4df50b5526ab
+1a77849a-0336-47ca-bad7-d0b986262094
+PS C:\temp\azure-enable-diagnostics-master> $subscriptions.id
+136e019a-7262-46b7-8268-6651ec788fac
+59dd17c0-d663-4eb5-8a12-3b34b9be7d9d
+ab0ac574-8a1f-4841-b1ad-ba4319a38043
+3f94409a-9a22-4c8b-9801-29be55f2d8b6
+ee98be70-c656-466c-b353-d4ee20f44f68
+b11cf078-0272-4e47-be40-f8e0dc958a04
+56febd12-c4d5-4008-a4fc-f421637ac9c5
+3f798547-66b7-4f9e-87b9-451bf103e5bb
+2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8
+9f94bed7-fd1a-4133-8db4-0f49ae2f4d26
+db5b1ec8-aeac-48dc-972d-eb4f0f441816
+9385c91b-f897-4c37-9a5f-9d8dddd72b2f
+ec196d28-a8ca-4c28-a3bc-249beafc2869
+ac83dcde-8bb2-464c-9953-c27613f17475
+84a2113f-8769-4362-b1ea-fb65a58e1bc2
+6553a3e2-7173-426e-9902-f272b54784d8
+60d4db16-3db1-4e3f-bc0f-d05cb137b639
+c7550957-9c95-4aec-b0f2-4df50b5526ab
+1a77849a-0336-47ca-bad7-d0b986262094
+PS C:\temp\azure-enable-diagnostics-master> $subscriptions.Name
+Citrix-7-DR
+Philology-AGL
+Innovation-Ideas-Non-Production
+Merchant-Development
+Business-Analytics-Development
+ISG-Development
+Visual-Studio-Online-Development
+Security-SOC-Sandbox
+Retail-Development
+Microsoft Azure Enterprise
+SAP-ERP-Production
+New-Energy-Development
+ISG-Production
+Business-Analytics-Production
+SAP-ERP-Non-Production
+Merchant-Production
+Security-Hunting-Sandbox
+Project-TOSCA-MSDN
+Security-Sandbox-Development
+PS C:\temp\azure-enable-diagnostics-master> .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseVM -ChooseStorage
+**********************
+Windows PowerShell transcript end
+End time: 20180426111019
+**********************

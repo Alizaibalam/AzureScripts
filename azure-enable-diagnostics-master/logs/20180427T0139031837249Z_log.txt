@@ -1,0 +1,757 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180427113903
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 14740
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180427T0139031837249Z_log.txt
+Found 19 subscriptions test1
+Do you want to enable diagnostic in 'Retail-Development' subscription?
+Enabling diagnostics in 'Retail-Development' subscription
+
+
+Name             : [A142890@agl.com.au, 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8]
+Account          : A142890@agl.com.au
+SubscriptionName : Retail-Development
+TenantId         : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+Environment      : AzureCloud
+
+
+ProviderNamespace : microsoft.insights
+RegistrationState : Registered
+ResourceTypes     : {components, components/query, components/metrics, components/events...}
+Locations         : {East US, South Central US, North Europe, West Europe...}
+ZoneMappings      :
+
+Confirm
+Removing the Azure profile will remove all associated environments, subscriptions, and accounts. Are you sure you want to remove the Azure profile?
+&Yes  &No  &Suspend
+Y
+Found 78 virtual machines
+Acquiring storage accounts
+ ********* list of Classic VMs found *********
+
+Id            : A142890@agl.com.au
+Type          : User
+Subscriptions : 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8
+Tenants       : {123913b9-915d-4d67-aaf9-ce327e8fc59f}
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0004
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0004
+ResourceGroupName : AZSACL001
+Resource          : @{Name=AZSAW0004; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0004; ResourceName=AZSAW0004; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL001; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0005
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0005
+ResourceGroupName : AZSACL001
+Resource          : @{Name=AZSAW0005; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0005; ResourceName=AZSAW0005; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL001; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0006
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0006
+ResourceGroupName : AZSACL001
+Resource          : @{Name=AZSAW0006; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0006; ResourceName=AZSAW0006; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL001; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0007
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0007
+ResourceGroupName : AZSACL001
+Resource          : @{Name=AZSAW0007; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0007; ResourceName=AZSAW0007; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL001; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0008
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0008
+ResourceGroupName : AZSACL001
+Resource          : @{Name=AZSAW0008; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0008; ResourceName=AZSAW0008; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL001; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0011
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0011
+ResourceGroupName : AZSACL001
+Resource          : @{Name=AZSAW0011; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0011; ResourceName=AZSAW0011; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL001; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0015
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0015
+ResourceGroupName : AZSACL001
+Resource          : @{Name=AZSAW0015; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0015; ResourceName=AZSAW0015; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL001; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0017
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0017
+ResourceGroupName : AZSACL001
+Resource          : @{Name=AZSAW0017; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0017; ResourceName=AZSAW0017; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL001; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0018
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0018
+ResourceGroupName : AZSACL001
+Resource          : @{Name=AZSAW0018; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL001/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0018; ResourceName=AZSAW0018; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL001; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0027
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0027
+ResourceGroupName : AZSACL003
+Resource          : @{Name=AZSAW0027; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0027; ResourceName=AZSAW0027; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL003; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0029
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0029
+ResourceGroupName : AZSACL003
+Resource          : @{Name=AZSAW0029; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0029; ResourceName=AZSAW0029; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL003; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0031
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0031
+ResourceGroupName : AZSACL003
+Resource          : @{Name=AZSAW0031; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0031; ResourceName=AZSAW0031; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL003; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0032
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0032
+ResourceGroupName : AZSACL003
+Resource          : @{Name=AZSAW0032; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0032; ResourceName=AZSAW0032; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL003; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0033
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0033
+ResourceGroupName : AZSACL003
+Resource          : @{Name=AZSAW0033; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0033; ResourceName=AZSAW0033; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL003; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0036
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0036
+ResourceGroupName : AZSACL003
+Resource          : @{Name=AZSAW0036; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL003/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0036; ResourceName=AZSAW0036; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL003; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL006/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0049
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0049
+ResourceGroupName : AZSACL006
+Resource          : @{Name=AZSAW0049; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL006/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0049; ResourceName=AZSAW0049; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL006; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL006/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0050
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0050
+ResourceGroupName : AZSACL006
+Resource          : @{Name=AZSAW0050; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL006/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0050; ResourceName=AZSAW0050; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL006; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL006/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0051
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0051
+ResourceGroupName : AZSACL006
+Resource          : @{Name=AZSAW0051; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL006/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0051; ResourceName=AZSAW0051; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL006; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL007/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0075
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0075
+ResourceGroupName : AZSACL007
+Resource          : @{Name=AZSAW0075; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL007/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0075; ResourceName=AZSAW0075; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL007; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL009/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0083
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0083
+ResourceGroupName : AZSACL009
+Resource          : @{Name=AZSAW0083; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL009/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0083; ResourceName=AZSAW0083; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL009; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL009/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0089
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0089
+ResourceGroupName : AZSACL009
+Resource          : @{Name=AZSAW0089; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL009/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0089; ResourceName=AZSAW0089; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL009; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          :
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL015/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0102
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0102
+ResourceGroupName : AZSACL015
+Resource          : @{Name=AZSAW0102; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL015/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0102; ResourceName=AZSAW0102; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL015; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL015/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0103
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0103
+ResourceGroupName : AZSACL015
+Resource          : @{Name=AZSAW0103; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL015/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0103; ResourceName=AZSAW0103; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL015; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL015/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0105
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0105
+ResourceGroupName : AZSACL015
+Resource          : @{Name=AZSAW0105; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/AZSACL015/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0105; ResourceName=AZSAW0105; ResourceType=Microsoft.ClassicCompute/virtualMachines;
+                    ResourceGroupName=AZSACL015; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG02_RD_VM_S_PREMIUMSTORGE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0113
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0113
+ResourceGroupName : RG02_RD_VM_S_PREMIUMSTORGE
+Resource          : @{Name=AZSAW0113; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG02_RD_VM_S_PREMIUMSTORGE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0113; ResourceName=AZSAW0113;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG02_RD_VM_S_PREMIUMSTORGE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG02_RD_VM_S_PREMIUMSTORGE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0121
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0121
+ResourceGroupName : RG02_RD_VM_S_PREMIUMSTORGE
+Resource          : @{Name=AZSAW0121; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG02_RD_VM_S_PREMIUMSTORGE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0121; ResourceName=AZSAW0121;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG02_RD_VM_S_PREMIUMSTORGE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG04_RD_VM_S_PREMIUMSTORAGE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0120
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0120
+ResourceGroupName : RG04_RD_VM_S_PREMIUMSTORAGE
+Resource          : @{Name=AZSAW0120; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG04_RD_VM_S_PREMIUMSTORAGE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0120; ResourceName=AZSAW0120;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG04_RD_VM_S_PREMIUMSTORAGE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG15_RD_D_VM_SAP-FEBRELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0249
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0249
+ResourceGroupName : RG15_RD_D_VM_SAP-FEBRELEASE
+Resource          : @{Name=AZSAW0249; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG15_RD_D_VM_SAP-FEBRELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0249; ResourceName=AZSAW0249;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG15_RD_D_VM_SAP-FEBRELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG15_RD_D_VM_SAP-FEBRELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0250
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0250
+ResourceGroupName : RG15_RD_D_VM_SAP-FEBRELEASE
+Resource          : @{Name=AZSAW0250; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG15_RD_D_VM_SAP-FEBRELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0250; ResourceName=AZSAW0250;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG15_RD_D_VM_SAP-FEBRELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG06_RD_S_VM_PREMIUMSTORAGE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0150
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0150
+ResourceGroupName : RG06_RD_S_VM_PREMIUMSTORAGE
+Resource          : @{Name=AZSAW0150; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG06_RD_S_VM_PREMIUMSTORAGE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0150; ResourceName=AZSAW0150;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG06_RD_S_VM_PREMIUMSTORAGE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG07_RD_D_VM_ROCKET/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0174
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0174
+ResourceGroupName : RG07_RD_D_VM_ROCKET
+Resource          : @{Name=AZSAW0174; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG07_RD_D_VM_ROCKET/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0174; ResourceName=AZSAW0174;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG07_RD_D_VM_ROCKET; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG07_RD_D_VM_ROCKET/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0176
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0176
+ResourceGroupName : RG07_RD_D_VM_ROCKET
+Resource          : @{Name=AZSAW0176; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG07_RD_D_VM_ROCKET/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0176; ResourceName=AZSAW0176;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG07_RD_D_VM_ROCKET; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG07_RD_D_VM_ROCKET/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0177
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0177
+ResourceGroupName : RG07_RD_D_VM_ROCKET
+Resource          : @{Name=AZSAW0177; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG07_RD_D_VM_ROCKET/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0177; ResourceName=AZSAW0177;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG07_RD_D_VM_ROCKET; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0216
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0216
+ResourceGroupName : RG12_RD_D_VM_ROCKET-PI
+Resource          : @{Name=AZSAW0216; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0216; ResourceName=AZSAW0216;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG12_RD_D_VM_ROCKET-PI; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0217
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0217
+ResourceGroupName : RG12_RD_D_VM_ROCKET-PI
+Resource          : @{Name=AZSAW0217; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0217; ResourceName=AZSAW0217;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG12_RD_D_VM_ROCKET-PI; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0221
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0221
+ResourceGroupName : RG12_RD_D_VM_ROCKET-PI
+Resource          : @{Name=AZSAW0221; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0221; ResourceName=AZSAW0221;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG12_RD_D_VM_ROCKET-PI; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0222
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0222
+ResourceGroupName : RG12_RD_D_VM_ROCKET-PI
+Resource          : @{Name=AZSAW0222; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0222; ResourceName=AZSAW0222;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG12_RD_D_VM_ROCKET-PI; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0223
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0223
+ResourceGroupName : RG12_RD_D_VM_ROCKET-PI
+Resource          : @{Name=AZSAW0223; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0223; ResourceName=AZSAW0223;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG12_RD_D_VM_ROCKET-PI; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0219
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0219
+ResourceGroupName : RG12_RD_D_VM_ROCKET-PI
+Resource          : @{Name=AZSAW0219; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0219; ResourceName=AZSAW0219;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG12_RD_D_VM_ROCKET-PI; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0220
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0220
+ResourceGroupName : RG12_RD_D_VM_ROCKET-PI
+Resource          : @{Name=AZSAW0220; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG12_RD_D_VM_ROCKET-PI/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0220; ResourceName=AZSAW0220;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG12_RD_D_VM_ROCKET-PI; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0241
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0241
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0241; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0241; ResourceName=AZSAW0241;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0243
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0243
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0243; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0243; ResourceName=AZSAW0243;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0244
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0244
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0244; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0244; ResourceName=AZSAW0244;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0245
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0245
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0245; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0245; ResourceName=AZSAW0245;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0246
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0246
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0246; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0246; ResourceName=AZSAW0246;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0255
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0255
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0255; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0255; ResourceName=AZSAW0255;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0260
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0260
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0260; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0260; ResourceName=AZSAW0260;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0261
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0261
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0261; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0261; ResourceName=AZSAW0261;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0262
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0262
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0262; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0262; ResourceName=AZSAW0262;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0263
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0263
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0263; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0263; ResourceName=AZSAW0263;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0264
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0264
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0264; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0264; ResourceName=AZSAW0264;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0265
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0265
+ResourceGroupName : RG13_RD_D_VM_SAP-RELEASE
+Resource          : @{Name=AZSAW0265; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG13_RD_D_VM_SAP-RELEASE/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0265; ResourceName=AZSAW0265;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG13_RD_D_VM_SAP-RELEASE; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/rg13_rd_d_vm_sap-release/providers/Microsoft.ClassicCompute/virtualMachines/AZSAL0019
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAL0019
+ResourceGroupName : rg13_rd_d_vm_sap-release
+Resource          : @{Name=AZSAL0019; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/rg13_rd_d_vm_sap-release/providers/Microsoft.ClassicCompute/virtualMachines/AZSAL0019; ResourceName=AZSAL0019;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=rg13_rd_d_vm_sap-release; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-qa-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0270
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0270
+ResourceGroupName : sap-monthly-qa-rg
+Resource          : @{Name=AZSAW0270; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-qa-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0270; ResourceName=AZSAW0270;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=sap-monthly-qa-rg; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-qa-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0271
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0271
+ResourceGroupName : sap-monthly-qa-rg
+Resource          : @{Name=AZSAW0271; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-qa-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0271; ResourceName=AZSAW0271;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=sap-monthly-qa-rg; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG16_RD_D_VM_FRONT_END/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0272
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0272
+ResourceGroupName : RG16_RD_D_VM_FRONT_END
+Resource          : @{Name=AZSAW0272; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG16_RD_D_VM_FRONT_END/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0272; ResourceName=AZSAW0272;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG16_RD_D_VM_FRONT_END; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG16_RD_D_VM_FRONT_END/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0273
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0273
+ResourceGroupName : RG16_RD_D_VM_FRONT_END
+Resource          : @{Name=AZSAW0273; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG16_RD_D_VM_FRONT_END/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0273; ResourceName=AZSAW0273;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG16_RD_D_VM_FRONT_END; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG17_RD_D_VM_DATA-COPY/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0275
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0275
+ResourceGroupName : RG17_RD_D_VM_DATA-COPY
+Resource          : @{Name=AZSAW0275; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG17_RD_D_VM_DATA-COPY/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0275; ResourceName=AZSAW0275;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG17_RD_D_VM_DATA-COPY; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG23_RD_D_VM_WA/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0294
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0294
+ResourceGroupName : RG23_RD_D_VM_WA
+Resource          : @{Name=AZSAW0294; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG23_RD_D_VM_WA/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0294; ResourceName=AZSAW0294;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG23_RD_D_VM_WA; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG23_RD_D_VM_WA/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0295
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0295
+ResourceGroupName : RG23_RD_D_VM_WA
+Resource          : @{Name=AZSAW0295; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG23_RD_D_VM_WA/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0295; ResourceName=AZSAW0295;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG23_RD_D_VM_WA; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG26_RD_D_VM_CXT/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0318
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0318
+ResourceGroupName : RG26_RD_D_VM_CXT
+Resource          : @{Name=AZSAW0318; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG26_RD_D_VM_CXT/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0318; ResourceName=AZSAW0318;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG26_RD_D_VM_CXT; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG26_RD_D_VM_CXT/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0319
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0319
+ResourceGroupName : RG26_RD_D_VM_CXT
+Resource          : @{Name=AZSAW0319; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG26_RD_D_VM_CXT/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0319; ResourceName=AZSAW0319;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG26_RD_D_VM_CXT; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG26_RD_D_VM_CXT/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0320
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0320
+ResourceGroupName : RG26_RD_D_VM_CXT
+Resource          : @{Name=AZSAW0320; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG26_RD_D_VM_CXT/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0320; ResourceName=AZSAW0320;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG26_RD_D_VM_CXT; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG26_RD_D_VM_CXT/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0321
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0321
+ResourceGroupName : RG26_RD_D_VM_CXT
+Resource          : @{Name=AZSAW0321; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG26_RD_D_VM_CXT/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0321; ResourceName=AZSAW0321;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG26_RD_D_VM_CXT; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG27_RD_D_VM_SAPCORP-ECC/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0329
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0329
+ResourceGroupName : RG27_RD_D_VM_SAPCORP-ECC
+Resource          : @{Name=AZSAW0329; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG27_RD_D_VM_SAPCORP-ECC/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0329; ResourceName=AZSAW0329;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG27_RD_D_VM_SAPCORP-ECC; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG27_RD_D_VM_SAPCORP-ECC/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0330
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0330
+ResourceGroupName : RG27_RD_D_VM_SAPCORP-ECC
+Resource          : @{Name=AZSAW0330; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG27_RD_D_VM_SAPCORP-ECC/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0330; ResourceName=AZSAW0330;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG27_RD_D_VM_SAPCORP-ECC; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG27_RD_D_VM_SAPCORP-ECC/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0331
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0331
+ResourceGroupName : RG27_RD_D_VM_SAPCORP-ECC
+Resource          : @{Name=AZSAW0331; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG27_RD_D_VM_SAPCORP-ECC/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0331; ResourceName=AZSAW0331;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG27_RD_D_VM_SAPCORP-ECC; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG27_RD_D_VM_SAPCORP-ECC/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0332
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0332
+ResourceGroupName : RG27_RD_D_VM_SAPCORP-ECC
+Resource          : @{Name=AZSAW0332; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG27_RD_D_VM_SAPCORP-ECC/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0332; ResourceName=AZSAW0332;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG27_RD_D_VM_SAPCORP-ECC; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG30_RD_D_VM_IDM/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0365
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0365
+ResourceGroupName : RG30_RD_D_VM_IDM
+Resource          : @{Name=AZSAW0365; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/RG30_RD_D_VM_IDM/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0365; ResourceName=AZSAW0365;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=RG30_RD_D_VM_IDM; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-release-dev-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0013
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0013
+ResourceGroupName : sap-monthly-release-dev-rg
+Resource          : @{Name=AZSAW0013; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-release-dev-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0013; ResourceName=AZSAW0013;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=sap-monthly-release-dev-rg; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-release-dev-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0014
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0014
+ResourceGroupName : sap-monthly-release-dev-rg
+Resource          : @{Name=AZSAW0014; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-release-dev-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0014; ResourceName=AZSAW0014;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=sap-monthly-release-dev-rg; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-rt-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0151
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0151
+ResourceGroupName : sap-monthly-rt-rg
+Resource          : @{Name=AZSAW0151; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-rt-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0151; ResourceName=AZSAW0151;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=sap-monthly-rt-rg; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-rt-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0152
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0152
+ResourceGroupName : sap-monthly-rt-rg
+Resource          : @{Name=AZSAW0152; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-rt-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0152; ResourceName=AZSAW0152;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=sap-monthly-rt-rg; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-qa-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0178
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0178
+ResourceGroupName : sap-monthly-qa-rg
+Resource          : @{Name=AZSAW0178; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-qa-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0178; ResourceName=AZSAW0178;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=sap-monthly-qa-rg; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-qa-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0179
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0179
+ResourceGroupName : sap-monthly-qa-rg
+Resource          : @{Name=AZSAW0179; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-qa-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0179; ResourceName=AZSAW0179;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=sap-monthly-qa-rg; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-staging-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0253
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0253
+ResourceGroupName : sap-monthly-staging-rg
+Resource          : @{Name=AZSAW0253; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-staging-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0253; ResourceName=AZSAW0253;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=sap-monthly-staging-rg; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+
+ResourceId        : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-staging-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0254
+ClassicResource   : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleListContext
+Name              : AZSAW0254
+ResourceGroupName : sap-monthly-staging-rg
+Resource          : @{Name=AZSAW0254; ResourceId=/subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/sap-monthly-staging-rg/providers/Microsoft.ClassicCompute/virtualMachines/AZSAW0254; ResourceName=AZSAW0254;
+                    ResourceType=Microsoft.ClassicCompute/virtualMachines; ResourceGroupName=sap-monthly-staging-rg; Location=australiaeast; SubscriptionId=2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8}
+Location          : Australia East
+
+ ********* list of Classic VMs found end *********
+ creating VMresult Object using 'Microsoft.Azure.ServiceManagemenet.Common.Models.PSAzureAccount'
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(CreateVirtualMachineResultObject): "You cannot call a method on a null-valued expression."
+Failed to enable diagnostic for 'Retail-Development' subscription
+CreateVirtualMachineResultObject : You cannot call a method on a null-valued expression.
+At C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1:384 char:37
++ ...      $virtualMachineResult = CreateVirtualMachineResultObject -Vm $vm
++                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [CreateVirtualMachineResultObject], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull,CreateVirtualMachineResultObject
+
+Do you want to enable diagnostic in 'Citrix-7-DR' subscription?
+
+

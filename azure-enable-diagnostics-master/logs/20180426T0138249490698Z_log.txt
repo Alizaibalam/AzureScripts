@@ -1,0 +1,175 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180426113825
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1
+Process ID: 3292
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180426T0138249490698Z_log.txt
+Found 19 subscriptions test1
+Do you want to enable diagnostic in 'Citrix-7-DR' subscription?
+Do you want to enable diagnostic in 'Philology-AGL' subscription?
+Do you want to enable diagnostic in 'Innovation-Ideas-Non-Production' subscription?
+Do you want to enable diagnostic in 'Merchant-Development' subscription?
+Do you want to enable diagnostic in 'Business-Analytics-Development' subscription?
+Do you want to enable diagnostic in 'ISG-Development' subscription?
+Do you want to enable diagnostic in 'Visual-Studio-Online-Development' subscription?
+Do you want to enable diagnostic in 'Security-SOC-Sandbox' subscription?
+Do you want to enable diagnostic in 'Retail-Development' subscription?
+Enabling diagnostics in 'Retail-Development' subscription
+
+
+Name             : [A142890@agl.com.au, 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8]
+Account          : A142890@agl.com.au
+SubscriptionName : Retail-Development
+TenantId         : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+Environment      : AzureCloud
+
+
+ProviderNamespace : microsoft.insights
+RegistrationState : Registered
+ResourceTypes     : {components, webtests, queries, scheduledqueryrules...}
+Locations         : {East US, South Central US, North Europe, West Europe...}
+ZoneMappings      :
+
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Found 91 virtual machines
+Acquiring storage accounts
+Checking storage in each resource group and location
+Getting existing storage accounts
+Checking storage in 'australiaeast' location
+Using 'azsaw0429st01' storage account in location 'australiaeast'
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Failed to enable diagnostic for 'azsaw0410' VM
+Cannot convert the "System.Object[]" value of type "System.Object[]" to type "System.Collections.Hashtable".
+At C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1:391 char:17
++ ...             $storageInLocation = ([hashtable]($storages)).Get_Item($v ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [], RuntimeException
+    + FullyQualifiedErrorId : ConvertToFinalInvalidCastException
+
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+Failed to enable diagnostic for 'azsaw0411' VM
+Cannot convert the "System.Object[]" value of type "System.Object[]" to type "System.Collections.Hashtable".
+At C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1:391 char:17
++ ...             $storageInLocation = ([hashtable]($storages)).Get_Item($v ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [], RuntimeException
+    + FullyQualifiedErrorId : ConvertToFinalInvalidCastException
+
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+WARNING: Get-AzureRmVM: A property of the output of this cmdlet will change in an upcoming breaking change release. The StorageAccountType property for a DataDisk will return Standard_LRS and Premium_LRS
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(): "The pipeline has been stopped."
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(): "The pipeline has been stopped."
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Import-Module): "Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'."
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Import-Module): "Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'."
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureStorageAccount
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(Import-Module): "Could not load type 'Microsoft.WindowsAzure.Commands.Common.FileUtilities' from assembly 'Microsoft.WindowsAzure.Commands.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'."
+Get-AzureStorageAccount : The 'Get-AzureStorageAccount' command was found in the module 'Azure', but the module could not
+be loaded. For more information, run 'Import-Module Azure'.
+At line:1 char:1
++ Get-AzureStorageAccount
++ ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureStorageAccount:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CouldNotAutoloadMatchingModule
+
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureRmStorageAccount -ResourceGroupName CPE-Automation-rg
+Get-AzureRmStorageAccount : Resource group 'CPE-Automation-rg' could not be found.
+At line:1 char:1
++ Get-AzureRmStorageAccount -ResourceGroupName CPE-Automation-rg
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureRmStorageAccount], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Management.Storage.GetAzureStorageAccountCommand
+Get-AzureRmStorageAccount : Resource group 'CPE-Automation-rg' could not be found.
+At line:1 char:1
++ Get-AzureRmStorageAccount -ResourceGroupName CPE-Automation-rg
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureRmStorageAccount], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Management.Storage.GetAzureStorageAccountCommand
+
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureRmStorageAccount -ResourceGroupName 'CPE-Automation-rg'
+Get-AzureRmStorageAccount : Resource group 'CPE-Automation-rg' could not be found.
+At line:1 char:1
++ Get-AzureRmStorageAccount -ResourceGroupName 'CPE-Automation-rg'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureRmStorageAccount], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Management.Storage.GetAzureStorageAccountCommand
+Get-AzureRmStorageAccount : Resource group 'CPE-Automation-rg' could not be found.
+At line:1 char:1
++ Get-AzureRmStorageAccount -ResourceGroupName 'CPE-Automation-rg'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureRmStorageAccount], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Management.Storage.GetAzureStorageAccountCommand
+
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureRmStorageAccount -ResourceGroupName 'CPE-Automation-rg'
+Get-AzureRmStorageAccount : Resource group 'CPE-Automation-rg' could not be found.
+At line:1 char:1
++ Get-AzureRmStorageAccount -ResourceGroupName 'CPE-Automation-rg'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureRmStorageAccount], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Management.Storage.GetAzureStorageAccountCommand
+Get-AzureRmStorageAccount : Resource group 'CPE-Automation-rg' could not be found.
+At line:1 char:1
++ Get-AzureRmStorageAccount -ResourceGroupName 'CPE-Automation-rg'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureRmStorageAccount], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Management.Storage.GetAzureStorageAccountCommand
+
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureRmStorageAccount -ResourceGroupName diagnosticssasyd01
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureRmStorageAccount -ResourceGroupName diagnostics
+
+
+ResourceGroupName      : Diagnostics
+StorageAccountName     : diagnosticsasyd01
+Id                     : /subscriptions/2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8/resourceGroups/Diagnostics/providers/Microsoft
+                         .Storage/storageAccounts/diagnosticsasyd01
+Location               : australiaeast
+Sku                    : Microsoft.Azure.Management.Storage.Models.Sku
+Kind                   : Storage
+Encryption             : Microsoft.Azure.Management.Storage.Models.Encryption
+AccessTier             :
+CreationTime           : 26/04/2018 1:58:07 AM
+CustomDomain           :
+Identity               :
+LastGeoFailoverTime    :
+PrimaryEndpoints       : Microsoft.Azure.Management.Storage.Models.Endpoints
+PrimaryLocation        : australiaeast
+ProvisioningState      : Succeeded
+SecondaryEndpoints     : Microsoft.Azure.Management.Storage.Models.Endpoints
+SecondaryLocation      : australiasoutheast
+StatusOfPrimary        : Available
+StatusOfSecondary      : Available
+Tags                   : {}
+EnableHttpsTrafficOnly : False
+NetworkRuleSet         : Microsoft.Azure.Commands.Management.Storage.Models.PSNetworkRuleSet
+Context                : Microsoft.WindowsAzure.Commands.Common.Storage.LazyAzureStorageContext
+ExtendedProperties     : {}
+
+
+
+PS C:\temp\azure-enable-diagnostics-master> .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -StoragePerLocation
+**********************
+Windows PowerShell transcript end
+End time: 20180426120047
+**********************

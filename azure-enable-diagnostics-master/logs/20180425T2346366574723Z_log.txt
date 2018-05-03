@@ -1,0 +1,359 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180426094636
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1
+Process ID: 17744
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180425T2346366574723Z_log.txt
+Found 19 subscriptions
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(CreateSubscriptionResultObject): "Cannot bind argument to parameter 'SubscriptionName' because it is an empty string."
+>> TerminatingError(EnableDiag.ps1): "Cannot bind argument to parameter 'SubscriptionName' because it is an empty string."
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot bind argument to parameter 'SubscriptionName' because 
+it is an empty string.
+At line:1 char:1
++ .\EnableDiag.ps1 -DeploymentModel 'Classic' -ChooseSubscription -Choo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,EnableDiag.ps1
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot bind argument to parameter 'SubscriptionName' because it is an empty string.
+At line:1 char:1
++ .\EnableDiag.ps1 -DeploymentModel 'Classic' -ChooseSubscription -Choo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,EnableDiag.ps1
+
+PS C:\temp\azure-enable-diagnostics-master> cls
+PS C:\temp\azure-enable-diagnostics-master> Select-AzureRmSubscription -SubscriptionName "Retail-Development"
+
+
+Name             : [A142890@agl.com.au, 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8]
+Account          : A142890@agl.com.au
+SubscriptionName : Retail-Development
+TenantId         : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+Environment      : AzureCloud
+
+
+
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureRmVM
+
+ResourceGroupName             Name      Location                 VmSize  OsType              NIC ProvisioningState Zone
+-----------------             ----      --------                 ------  ------              --- ----------------- ----
+AMO-PATCH-MGMT-RG        azsaw0410 australiaeast       Standard_DS12_v2 Windows   azsaw0410-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0411 australiaeast       Standard_DS12_v2 Windows   azsaw0411-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0412 australiaeast       Standard_DS14_v2 Windows   azsaw0412-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0413 australiaeast       Standard_DS13_v2 Windows   azsaw0413-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0414 australiaeast       Standard_DS14_v2 Windows   azsaw0414-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0415 australiaeast       Standard_DS12_v2 Windows   azsaw0415-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0416 australiaeast        Standard_DS5_v2 Windows   azsaw0416-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0417 australiaeast       Standard_DS12_v2 Windows   azsaw0417-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0418 australiaeast       Standard_DS12_v2 Windows   azsaw0418-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0419 australiaeast        Standard_DS5_v2 Windows   azsaw0419-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0420 australiaeast       Standard_DS12_v2 Windows   azsaw0420-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0421 australiaeast       Standard_DS12_v2 Windows   azsaw0421-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0422 australiaeast       Standard_DS12_v2 Windows   azsaw0422-nic1         Succeeded
+CONNECTNOW-NPRD-RG-01    AZSAW0126 australiaeast         Standard_E4_v3 Windows AZSAW0126-nic-01         Succeeded
+CONNECTNOW-NPRD-RG-01    AZSAW0127 australiaeast         Standard_A1_v2 Windows AZSAW0127-nic-01         Succeeded
+CONNECTNOW-UAT-RG-01     AZSAW0134 australiaeast         Standard_E4_V3 Windows AZSAW0134-nic-01         Succeeded
+CONNECTNOW-UAT-RG-01     AZSAW0135 australiaeast         Standard_E2_v3 Windows AZSAW0135-nic-01         Succeeded
+COREUPLIFT-NPRD-RG       azsaw0470 australiaeast       Standard_DS13_v2 Windows   azsaw0470-nic1         Succeeded
+COREUPLIFT-NPRD-RG       azsaw0471 australiaeast       Standard_DS13_v2 Windows   azsaw0471-nic1         Succeeded
+IBMUNICA-NPRD-RG-01      AZSAW0256 australiaeast         Standard_E4_v3 Windows  AZSAW0256-nic01         Succeeded
+IBMUNICA-NPRD-RG-01      AZSAW0257 australiaeast         Standard_E4_v3 Windows  AZSAW0257-NIC01         Succeeded
+IBMUNICA-NPRD-RG-01      AZSAW0258 australiaeast         Standard_E4_v3 Windows  AZSAW0258-NIC01         Succeeded
+IBMUNICA-NPRD-RG-01      AZSAW0259 australiaeast         Standard_E2_v3 Windows  AZSAW0259-NIC01         Succeeded
+IBMUNICA-UAT-RG-01       AZSAW0266 australiaeast         Standard_E4_v3 Windows AZSAW0266-nic-01         Succeeded
+IBMUNICA-UAT-RG-01       AZSAW0267 australiaeast         Standard_E4_v3 Windows AZSAW0267-nic-01         Succeeded
+IBMUNICA-UAT-RG-01       AZSAW0268 australiaeast        Standard_E16_v3 Windows AZSAW0268-nic-01         Succeeded
+IBMUNICA-UAT-RG-01       AZSAW0269 australiaeast         Standard_E2_v3 Windows AZSAW0269-nic-01         Succeeded
+QAT-NPRD-RG-01           AZSAVD041 australiaeast            Standard_F2 Windows AZSAVD041-nic-01         Succeeded
+QAT-NPRD-RG-01           AZSAVD042 australiaeast         Standard_D1_v2 Windows AZSAVD042-nic-01         Succeeded
+QAT-NPRD-RG-01           AZSAVD043 australiaeast         Standard_D1_v2 Windows AZSAVD043-nic-01         Succeeded
+RELEASE-DEV-RG           AZSAW0398 australiaeast       Standard_DS11_v2 Windows     azsaw0398679         Succeeded
+RELEASE-DEV-RG           AZSAW0399 australiaeast       Standard_DS11_v2 Windows     azsaw0399478         Succeeded
+RELEASE-DEV-RG           azsaw0400 australiaeast         Standard_A4_v2 Windows     azsaw0400153         Succeeded
+SAP-CORPSUPPORTPACK-RG   azsaw0427 australiaeast       Standard_DS13_v2 Windows    azsaw0427-nic         Succeeded
+SAP-CORPSUPPORTPACK-RG   azsaw0428 australiaeast       Standard_DS13_v2 Windows    azsaw0428-nic         Succeeded
+SAP-CORPSUPPORTPACK-RG   azsaw0429 australiaeast       Standard_DS13_v2 Windows    azsaw0429-nic         Succeeded
+SAP-CORPSUPPORTPACK-RG   azsaw0430 australiaeast       Standard_DS13_v2 Windows    azsaw0430-nic         Succeeded
+SAPCOREUPLIFT-NPRD-RG-01 AZSAW0287 australiaeast       Standard_DS14_v2 Windows AZSAW0287-nic-01         Succeeded
+SAPCOREUPLIFT-NPRD-RG-01 AZSAW0288 australiaeast       Standard_DS13_v2 Windows AZSAW0288-nic-01         Succeeded
+SAPCORPHR-DEV-RG-01      AZSAW0329 australiaeast        Standard_E2s_v3 Windows AZSAW0329-nic-01         Succeeded
+SAPCORPHR-DEV-RG-01      AZSAW0330 australiaeast        Standard_E2s_v3 Windows AZSAW0330-nic-01         Succeeded
+SAPCORPHR-DEV-RG-01      AZSAW0331 australiaeast        Standard_E4s_v3 Windows AZSAW0331-nic-01         Succeeded
+SAPCORPHR-DEV-RG-01      AZSAW0332 australiaeast        Standard_E2s_v3 Windows AZSAW0332-nic-01         Succeeded
+SAPLD-DEV-RG-01          AZSAW0153 australiaeast Standard_DS13_v2_Promo Windows AZSAW0153-nic-01         Succeeded
+SAPLD-DEV-RG-01          AZSAW0154 australiaeast        Standard_E4s_v3 Windows AZSAW0154-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0013 australiaeast        Standard_D13_v2 Windows AZSAW0013-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0014 australiaeast        Standard_D13_v2 Windows AZSAW0014-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0015 australiaeast         Standard_E4_v3 Windows AZSAW0015-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0029 australiaeast         Standard_E4_v3 Windows AZSAW0029-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0083 australiaeast        Standard_D13_v2 Windows AZSAW0083-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0174 australiaeast        Standard_D13_v2 Windows AZSAW0174-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0004 australiaeast        Standard_D12_v2 Windows AZSAW0004-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0005 australiaeast        Standard_D13_v2 Windows AZSAW0005-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0011 australiaeast        Standard_D12_v2 Windows AZSAW0011-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0103 australiaeast        Standard_D13_v2 Windows AZSAW0103-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0105 australiaeast         Standard_E8_v3 Windows AZSAW0105-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0249 australiaeast         Standard_E8_v3 Windows AZSAW0249-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0250 australiaeast         Standard_E8_v3 Windows AZSAW0250-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0263 australiaeast         Standard_E4_v3 Windows AZSAW0263-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0275 australiaeast       Standard_DS13_v2 Windows AZSAW0275-nic-01         Succeeded
+SAPRELMAN-QA-RG-01       AZSAW0018 australiaeast         Standard_E4_v3 Windows AZSAW0018-nic-01         Succeeded
+SAPRELMAN-QA-RG-01       AZSAW0031 australiaeast        Standard_D13_v2 Windows AZSAW0031-nic-01         Succeeded
+SAPRELMAN-QA-RG-01       AZSAW0121 australiaeast       Standard_DS13_v2 Windows AZSAW0121-nic-01         Succeeded
+SAPRELMAN-QA-RG-01       AZSAW0178 australiaeast        Standard_D14_v2 Windows AZSAW0178-nic-01         Succeeded
+SAPRELMAN-QA-RG-01       AZSAW0179 australiaeast        Standard_D14_v2 Windows AZSAW0179-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0027 australiaeast        Standard_D13_v2 Windows AZSAW0027-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0036 australiaeast        Standard_D13_v2 Windows AZSAW0036-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0102 australiaeast        Standard_D13_v2 Windows AZSAW0102-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0150 australiaeast       Standard_DS13_v2 Windows AZSAW0150-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0264 australiaeast         Standard_E8_v3 Windows AZSAW0264-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0270 australiaeast       Standard_DS14_v2 Windows AZSAW0270-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0271 australiaeast       Standard_DS13_v2 Windows AZSAW0271-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0026 australiaeast         Standard_E8_v3 Windows AZSAW0026-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0168 australiaeast        Standard_D14_v2 Windows AZSAW0168-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0169 australiaeast        Standard_D13_v2 Windows AZSAW0169-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0170 australiaeast       Standard_DS12_v2 Windows AZSAW0170-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0171 australiaeast       Standard_DS14_v2 Windows AZSAW0171-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0242 australiaeast         Standard_E4_v3 Windows AZSAW0242-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-02    AZSAW0253 australiaeast       Standard_DS14_v2 Windows AZSAW0253-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-02    AZSAW0254 australiaeast       Standard_DS13_v2 Windows AZSAW0254-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-02    AZSAW0255 australiaeast       Standard_DS14_v2 Windows AZSAW0255-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-02    AZSAW0265 australiaeast         Standard_E8_v3 Windows AZSAW0265-nic-01         Succeeded
+SAPRELMAN-TEST-RG-01     AZSAW0113 australiaeast       Standard_DS13_v2 Windows AZSAW0113-nic-01         Succeeded
+SAPRELMAN-TEST-RG-01     AZSAW0151 australiaeast       Standard_DS14_v2 Windows AZSAW0151-nic-01         Succeeded
+SAPRELMAN-TEST-RG-01     AZSAW0152 australiaeast       Standard_DS13_v2 Windows AZSAW0152-nic-01         Succeeded
+SAPRELMAN-TEST-RG-01     AZSAW0241 australiaeast       Standard_DS13_v2 Windows AZSAW0241-nic-01         Succeeded
+SAPROCKETPI-DEV-RG-01    AZSAW0215 australiaeast         Standard_E8_v3 Windows AZSAW0215-nic-01         Succeeded
+STDM-NPRD-RG-01          AZSAW0344 australiaeast       Standard_DS14_v2 Windows AZSAW0344-nic-01         Succeeded
+STDM-NPRD-RG-01          AZSAW0345 australiaeast       Standard_DS14_v2 Windows AZSAW0345-nic-01         Succeeded
+STDM-NPRD-RG-01          AZSAW0346 australiaeast       Standard_DS14_v2 Windows AZSAW0346-nic-01         Succeeded
+STDM-NPRD-RG-01          AZSAW0347 australiaeast       Standard_DS14_v2 Windows AZSAW0347-nic-01         Succeeded
+
+
+PS C:\temp\azure-enable-diagnostics-master> $a=get-azurermvm
+PS C:\temp\azure-enable-diagnostics-master> $a
+
+ResourceGroupName             Name      Location                 VmSize  OsType              NIC ProvisioningState Zone
+-----------------             ----      --------                 ------  ------              --- ----------------- ----
+AMO-PATCH-MGMT-RG        azsaw0410 australiaeast       Standard_DS12_v2 Windows   azsaw0410-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0411 australiaeast       Standard_DS12_v2 Windows   azsaw0411-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0412 australiaeast       Standard_DS14_v2 Windows   azsaw0412-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0413 australiaeast       Standard_DS13_v2 Windows   azsaw0413-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0414 australiaeast       Standard_DS14_v2 Windows   azsaw0414-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0415 australiaeast       Standard_DS12_v2 Windows   azsaw0415-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0416 australiaeast        Standard_DS5_v2 Windows   azsaw0416-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0417 australiaeast       Standard_DS12_v2 Windows   azsaw0417-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0418 australiaeast       Standard_DS12_v2 Windows   azsaw0418-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0419 australiaeast        Standard_DS5_v2 Windows   azsaw0419-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0420 australiaeast       Standard_DS12_v2 Windows   azsaw0420-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0421 australiaeast       Standard_DS12_v2 Windows   azsaw0421-nic1         Succeeded
+AMO-PATCH-MGMT-RG        azsaw0422 australiaeast       Standard_DS12_v2 Windows   azsaw0422-nic1         Succeeded
+CONNECTNOW-NPRD-RG-01    AZSAW0126 australiaeast         Standard_E4_v3 Windows AZSAW0126-nic-01         Succeeded
+CONNECTNOW-NPRD-RG-01    AZSAW0127 australiaeast         Standard_A1_v2 Windows AZSAW0127-nic-01         Succeeded
+CONNECTNOW-UAT-RG-01     AZSAW0134 australiaeast         Standard_E4_V3 Windows AZSAW0134-nic-01         Succeeded
+CONNECTNOW-UAT-RG-01     AZSAW0135 australiaeast         Standard_E2_v3 Windows AZSAW0135-nic-01         Succeeded
+COREUPLIFT-NPRD-RG       azsaw0470 australiaeast       Standard_DS13_v2 Windows   azsaw0470-nic1         Succeeded
+COREUPLIFT-NPRD-RG       azsaw0471 australiaeast       Standard_DS13_v2 Windows   azsaw0471-nic1         Succeeded
+IBMUNICA-NPRD-RG-01      AZSAW0256 australiaeast         Standard_E4_v3 Windows  AZSAW0256-nic01         Succeeded
+IBMUNICA-NPRD-RG-01      AZSAW0257 australiaeast         Standard_E4_v3 Windows  AZSAW0257-NIC01         Succeeded
+IBMUNICA-NPRD-RG-01      AZSAW0258 australiaeast         Standard_E4_v3 Windows  AZSAW0258-NIC01         Succeeded
+IBMUNICA-NPRD-RG-01      AZSAW0259 australiaeast         Standard_E2_v3 Windows  AZSAW0259-NIC01         Succeeded
+IBMUNICA-UAT-RG-01       AZSAW0266 australiaeast         Standard_E4_v3 Windows AZSAW0266-nic-01         Succeeded
+IBMUNICA-UAT-RG-01       AZSAW0267 australiaeast         Standard_E4_v3 Windows AZSAW0267-nic-01         Succeeded
+IBMUNICA-UAT-RG-01       AZSAW0268 australiaeast        Standard_E16_v3 Windows AZSAW0268-nic-01         Succeeded
+IBMUNICA-UAT-RG-01       AZSAW0269 australiaeast         Standard_E2_v3 Windows AZSAW0269-nic-01         Succeeded
+QAT-NPRD-RG-01           AZSAVD041 australiaeast            Standard_F2 Windows AZSAVD041-nic-01         Succeeded
+QAT-NPRD-RG-01           AZSAVD042 australiaeast         Standard_D1_v2 Windows AZSAVD042-nic-01         Succeeded
+QAT-NPRD-RG-01           AZSAVD043 australiaeast         Standard_D1_v2 Windows AZSAVD043-nic-01         Succeeded
+RELEASE-DEV-RG           AZSAW0398 australiaeast       Standard_DS11_v2 Windows     azsaw0398679         Succeeded
+RELEASE-DEV-RG           AZSAW0399 australiaeast       Standard_DS11_v2 Windows     azsaw0399478         Succeeded
+RELEASE-DEV-RG           azsaw0400 australiaeast         Standard_A4_v2 Windows     azsaw0400153         Succeeded
+SAP-CORPSUPPORTPACK-RG   azsaw0427 australiaeast       Standard_DS13_v2 Windows    azsaw0427-nic         Succeeded
+SAP-CORPSUPPORTPACK-RG   azsaw0428 australiaeast       Standard_DS13_v2 Windows    azsaw0428-nic         Succeeded
+SAP-CORPSUPPORTPACK-RG   azsaw0429 australiaeast       Standard_DS13_v2 Windows    azsaw0429-nic         Succeeded
+SAP-CORPSUPPORTPACK-RG   azsaw0430 australiaeast       Standard_DS13_v2 Windows    azsaw0430-nic         Succeeded
+SAPCOREUPLIFT-NPRD-RG-01 AZSAW0287 australiaeast       Standard_DS14_v2 Windows AZSAW0287-nic-01         Succeeded
+SAPCOREUPLIFT-NPRD-RG-01 AZSAW0288 australiaeast       Standard_DS13_v2 Windows AZSAW0288-nic-01         Succeeded
+SAPCORPHR-DEV-RG-01      AZSAW0329 australiaeast        Standard_E2s_v3 Windows AZSAW0329-nic-01         Succeeded
+SAPCORPHR-DEV-RG-01      AZSAW0330 australiaeast        Standard_E2s_v3 Windows AZSAW0330-nic-01         Succeeded
+SAPCORPHR-DEV-RG-01      AZSAW0331 australiaeast        Standard_E4s_v3 Windows AZSAW0331-nic-01         Succeeded
+SAPCORPHR-DEV-RG-01      AZSAW0332 australiaeast        Standard_E2s_v3 Windows AZSAW0332-nic-01         Succeeded
+SAPLD-DEV-RG-01          AZSAW0153 australiaeast Standard_DS13_v2_Promo Windows AZSAW0153-nic-01         Succeeded
+SAPLD-DEV-RG-01          AZSAW0154 australiaeast        Standard_E4s_v3 Windows AZSAW0154-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0013 australiaeast        Standard_D13_v2 Windows AZSAW0013-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0014 australiaeast        Standard_D13_v2 Windows AZSAW0014-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0015 australiaeast         Standard_E4_v3 Windows AZSAW0015-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0029 australiaeast         Standard_E4_v3 Windows AZSAW0029-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0083 australiaeast        Standard_D13_v2 Windows AZSAW0083-nic-01         Succeeded
+SAPRELMAN-DEV-RG-01      AZSAW0174 australiaeast        Standard_D13_v2 Windows AZSAW0174-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0004 australiaeast        Standard_D12_v2 Windows AZSAW0004-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0005 australiaeast        Standard_D13_v2 Windows AZSAW0005-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0011 australiaeast        Standard_D12_v2 Windows AZSAW0011-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0103 australiaeast        Standard_D13_v2 Windows AZSAW0103-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0105 australiaeast         Standard_E8_v3 Windows AZSAW0105-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0249 australiaeast         Standard_E8_v3 Windows AZSAW0249-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0250 australiaeast         Standard_E8_v3 Windows AZSAW0250-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0263 australiaeast         Standard_E4_v3 Windows AZSAW0263-nic-01         Succeeded
+SAPRELMAN-DEV-RG-02      AZSAW0275 australiaeast       Standard_DS13_v2 Windows AZSAW0275-nic-01         Succeeded
+SAPRELMAN-QA-RG-01       AZSAW0018 australiaeast         Standard_E4_v3 Windows AZSAW0018-nic-01         Succeeded
+SAPRELMAN-QA-RG-01       AZSAW0031 australiaeast        Standard_D13_v2 Windows AZSAW0031-nic-01         Succeeded
+SAPRELMAN-QA-RG-01       AZSAW0121 australiaeast       Standard_DS13_v2 Windows AZSAW0121-nic-01         Succeeded
+SAPRELMAN-QA-RG-01       AZSAW0178 australiaeast        Standard_D14_v2 Windows AZSAW0178-nic-01         Succeeded
+SAPRELMAN-QA-RG-01       AZSAW0179 australiaeast        Standard_D14_v2 Windows AZSAW0179-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0027 australiaeast        Standard_D13_v2 Windows AZSAW0027-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0036 australiaeast        Standard_D13_v2 Windows AZSAW0036-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0102 australiaeast        Standard_D13_v2 Windows AZSAW0102-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0150 australiaeast       Standard_DS13_v2 Windows AZSAW0150-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0264 australiaeast         Standard_E8_v3 Windows AZSAW0264-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0270 australiaeast       Standard_DS14_v2 Windows AZSAW0270-nic-01         Succeeded
+SAPRELMAN-QA-RG-02       AZSAW0271 australiaeast       Standard_DS13_v2 Windows AZSAW0271-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0026 australiaeast         Standard_E8_v3 Windows AZSAW0026-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0168 australiaeast        Standard_D14_v2 Windows AZSAW0168-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0169 australiaeast        Standard_D13_v2 Windows AZSAW0169-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0170 australiaeast       Standard_DS12_v2 Windows AZSAW0170-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0171 australiaeast       Standard_DS14_v2 Windows AZSAW0171-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-01    AZSAW0242 australiaeast         Standard_E4_v3 Windows AZSAW0242-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-02    AZSAW0253 australiaeast       Standard_DS14_v2 Windows AZSAW0253-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-02    AZSAW0254 australiaeast       Standard_DS13_v2 Windows AZSAW0254-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-02    AZSAW0255 australiaeast       Standard_DS14_v2 Windows AZSAW0255-nic-01         Succeeded
+SAPRELMAN-STAGE-RG-02    AZSAW0265 australiaeast         Standard_E8_v3 Windows AZSAW0265-nic-01         Succeeded
+SAPRELMAN-TEST-RG-01     AZSAW0113 australiaeast       Standard_DS13_v2 Windows AZSAW0113-nic-01         Succeeded
+SAPRELMAN-TEST-RG-01     AZSAW0151 australiaeast       Standard_DS14_v2 Windows AZSAW0151-nic-01         Succeeded
+SAPRELMAN-TEST-RG-01     AZSAW0152 australiaeast       Standard_DS13_v2 Windows AZSAW0152-nic-01         Succeeded
+SAPRELMAN-TEST-RG-01     AZSAW0241 australiaeast       Standard_DS13_v2 Windows AZSAW0241-nic-01         Succeeded
+SAPROCKETPI-DEV-RG-01    AZSAW0215 australiaeast         Standard_E8_v3 Windows AZSAW0215-nic-01         Succeeded
+STDM-NPRD-RG-01          AZSAW0344 australiaeast       Standard_DS14_v2 Windows AZSAW0344-nic-01         Succeeded
+STDM-NPRD-RG-01          AZSAW0345 australiaeast       Standard_DS14_v2 Windows AZSAW0345-nic-01         Succeeded
+STDM-NPRD-RG-01          AZSAW0346 australiaeast       Standard_DS14_v2 Windows AZSAW0346-nic-01         Succeeded
+STDM-NPRD-RG-01          AZSAW0347 australiaeast       Standard_DS14_v2 Windows AZSAW0347-nic-01         Succeeded
+
+
+PS C:\temp\azure-enable-diagnostics-master> $a.ResourceGroupNAme
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+AMO-PATCH-MGMT-RG
+CONNECTNOW-NPRD-RG-01
+CONNECTNOW-NPRD-RG-01
+CONNECTNOW-UAT-RG-01
+CONNECTNOW-UAT-RG-01
+COREUPLIFT-NPRD-RG
+COREUPLIFT-NPRD-RG
+IBMUNICA-NPRD-RG-01
+IBMUNICA-NPRD-RG-01
+IBMUNICA-NPRD-RG-01
+IBMUNICA-NPRD-RG-01
+IBMUNICA-UAT-RG-01
+IBMUNICA-UAT-RG-01
+IBMUNICA-UAT-RG-01
+IBMUNICA-UAT-RG-01
+QAT-NPRD-RG-01
+QAT-NPRD-RG-01
+QAT-NPRD-RG-01
+RELEASE-DEV-RG
+RELEASE-DEV-RG
+RELEASE-DEV-RG
+SAP-CORPSUPPORTPACK-RG
+SAP-CORPSUPPORTPACK-RG
+SAP-CORPSUPPORTPACK-RG
+SAP-CORPSUPPORTPACK-RG
+SAPCOREUPLIFT-NPRD-RG-01
+SAPCOREUPLIFT-NPRD-RG-01
+SAPCORPHR-DEV-RG-01
+SAPCORPHR-DEV-RG-01
+SAPCORPHR-DEV-RG-01
+SAPCORPHR-DEV-RG-01
+SAPLD-DEV-RG-01
+SAPLD-DEV-RG-01
+SAPRELMAN-DEV-RG-01
+SAPRELMAN-DEV-RG-01
+SAPRELMAN-DEV-RG-01
+SAPRELMAN-DEV-RG-01
+SAPRELMAN-DEV-RG-01
+SAPRELMAN-DEV-RG-01
+SAPRELMAN-DEV-RG-02
+SAPRELMAN-DEV-RG-02
+SAPRELMAN-DEV-RG-02
+SAPRELMAN-DEV-RG-02
+SAPRELMAN-DEV-RG-02
+SAPRELMAN-DEV-RG-02
+SAPRELMAN-DEV-RG-02
+SAPRELMAN-DEV-RG-02
+SAPRELMAN-DEV-RG-02
+SAPRELMAN-QA-RG-01
+SAPRELMAN-QA-RG-01
+SAPRELMAN-QA-RG-01
+SAPRELMAN-QA-RG-01
+SAPRELMAN-QA-RG-01
+SAPRELMAN-QA-RG-02
+SAPRELMAN-QA-RG-02
+SAPRELMAN-QA-RG-02
+SAPRELMAN-QA-RG-02
+SAPRELMAN-QA-RG-02
+SAPRELMAN-QA-RG-02
+SAPRELMAN-QA-RG-02
+SAPRELMAN-STAGE-RG-01
+SAPRELMAN-STAGE-RG-01
+SAPRELMAN-STAGE-RG-01
+SAPRELMAN-STAGE-RG-01
+SAPRELMAN-STAGE-RG-01
+SAPRELMAN-STAGE-RG-01
+SAPRELMAN-STAGE-RG-02
+SAPRELMAN-STAGE-RG-02
+SAPRELMAN-STAGE-RG-02
+SAPRELMAN-STAGE-RG-02
+SAPRELMAN-TEST-RG-01
+SAPRELMAN-TEST-RG-01
+SAPRELMAN-TEST-RG-01
+SAPRELMAN-TEST-RG-01
+SAPROCKETPI-DEV-RG-01
+STDM-NPRD-RG-01
+STDM-NPRD-RG-01
+STDM-NPRD-RG-01
+STDM-NPRD-RG-01
+PS C:\temp\azure-enable-diagnostics-master> Set-AzureRmVMDiagnosticsExtension -ResourceGroupName AMO-PATCH-MGMT-RG -VMName azsaw0410 -DiagnosticsConfigurationPath diagnostics_publicconfig.xml -StorageAccountName diagnosticssasyd01 -StorageAccountKey '8uSAO6mfxH+1B5e2isBh5xLHKTxFtNgG43vfr+X4nzTwY2JualGi60hbAeHwMwNqHUh8xcvdWf+F9nX2RIhEPg==' -Verbose
+Set-AzureRmVMDiagnosticsExtension : Could not find file 
+'C:\temp\azure-enable-diagnostics-master\diagnostics_publicconfig.xml'.
+At line:1 char:1
++ Set-AzureRmVMDiagnosticsExtension -ResourceGroupName AMO-PATCH-MGMT-R ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzureRmVMDiagnosticsExtension], FileNotFoundException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Compute.SetAzureRmVMDiagnosticsExtensionCommand
+Set-AzureRmVMDiagnosticsExtension : Could not find file 'C:\temp\azure-enable-diagnostics-master\diagnostics_publicconfig.xml'.
+At line:1 char:1
++ Set-AzureRmVMDiagnosticsExtension -ResourceGroupName AMO-PATCH-MGMT-R ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzureRmVMDiagnosticsExtension], FileNotFoundException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Compute.SetAzureRmVMDiagnosticsExtensionCommand
+
+PS C:\temp\azure-enable-diagnostics-master> Set-AzureRmVMDiagnosticsExtension -ResourceGroupName AMO-PATCH-MGMT-RG -VMName azsaw0410 -StorageAccountName diagnosticssasyd01 -StorageAccountKey '8uSAO6mfxH+1B5e2isBh5xLHKTxFtNgG43vfr+X4nzTwY2JualGi60hbAeHwMwNqHUh8xcvdWf+F9nX2RIhEPg==' -Verbose
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\temp\azure-enable-diagnostics-master> Set-AzureRmVMDiagnosticsExtension -ResourceGroupName AMO-PATCH-MGMT-RG -VMName azsaw0410 -DiagnosticsConfigurationPath .\winDiagConfig.xml -StorageAccountName diagnosticssasyd01 -StorageAccountKey '8uSAO6mfxH+1B5e2isBh5xLHKTxFtNgG43vfr+X4nzTwY2JualGi60hbAeHwMwNqHUh8xcvdWf+F9nX2RIhEPg==' -Verbose
+WARNING: The resourceId defined in the config file does not match the actual resource's id.
+**********************
+Windows PowerShell transcript end
+End time: 20180426100630
+**********************

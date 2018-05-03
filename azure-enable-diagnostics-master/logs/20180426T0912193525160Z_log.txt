@@ -1,0 +1,94 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180426191219
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 19452
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180426T0912193525160Z_log.txt
+Found 19 subscriptions test1
+Do you want to enable diagnostic in 'Citrix-7-DR' subscription?
+Do you want to enable diagnostic in 'Philology-AGL' subscription?
+Do you want to enable diagnostic in 'Innovation-Ideas-Non-Production' subscription?
+Do you want to enable diagnostic in 'Merchant-Development' subscription?
+Do you want to enable diagnostic in 'Business-Analytics-Development' subscription?
+Do you want to enable diagnostic in 'ISG-Development' subscription?
+Do you want to enable diagnostic in 'Visual-Studio-Online-Development' subscription?
+Do you want to enable diagnostic in 'Security-SOC-Sandbox' subscription?
+Do you want to enable diagnostic in 'Retail-Development' subscription?
+Enabling diagnostics in 'Retail-Development' subscription
+
+
+Name             : [A142890@agl.com.au, 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8]
+Account          : A142890@agl.com.au
+SubscriptionName : Retail-Development
+TenantId         : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+Environment      : AzureCloud
+
+
+ProviderNamespace : microsoft.insights
+RegistrationState : Registered
+ResourceTypes     : {components, webtests, queries, scheduledqueryrules...}
+Locations         : {East US, South Central US, North Europe, West Europe...}
+ZoneMappings      :
+
+Get-AzureVM : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up your 
+Azure credentials.
+At C:\temp\azure-enable-diagnostics-master\ClassicModule.ps1:89 char:20
++             $vms = Get-AzureVM
++                    ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+Get-AzureVM : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up your Azure credentials.
+At C:\temp\azure-enable-diagnostics-master\ClassicModule.ps1:89 char:20
++             $vms = Get-AzureVM
++                    ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+
+No vm were found
+Do you want to enable diagnostic in 'Microsoft Azure Enterprise' subscription?
+
+
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureVM
+Get-AzureVM : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up your 
+Azure credentials.
+At line:1 char:1
++ Get-AzureVM
++ ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+Get-AzureVM : Your Azure credentials have not been set up or have expired, please run Add-AzureAccount to set up your Azure credentials.
+At line:1 char:1
++ Get-AzureVM
++ ~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzureVM], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ServiceManagement.IaaS.GetAzureVMCommand
+
+PS C:\temp\azure-enable-diagnostics-master> Add-AzureAccount
+Add-AzureAccount : No subscriptions are associated with the logged in account in Azure Service Management (RDFE). This 
+means that the logged in user is not an administrator or co-administrator for any account.\r\nDid you mean to execute 
+Connect-AzureRmAccount?
+At line:1 char:1
++ Add-AzureAccount
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Add-AzureAccount], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.Profile.AddAzureAccount
+Add-AzureAccount : No subscriptions are associated with the logged in account in Azure Service Management (RDFE). This means that the logged in user is not an administrator or co-administrator for any account.\r\nDid you mean to execute Connect-AzureRmAccount?
+At line:1 char:1
++ Add-AzureAccount
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Add-AzureAccount], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.Profile.AddAzureAccount
+

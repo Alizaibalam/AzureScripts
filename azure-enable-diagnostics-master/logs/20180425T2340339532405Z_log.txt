@@ -1,0 +1,65 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180426094034
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\WINDOWS\syswow64\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 17000
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180425T2340339532405Z_log.txt
+Found 19 subscriptions
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(CreateSubscriptionResultObject): "Cannot bind argument to parameter 'SubscriptionName' because it is an empty string."
+>> TerminatingError(EnableDiag.ps1): "Cannot bind argument to parameter 'SubscriptionName' because it is an empty string."
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot bind argument to parameter 'SubscriptionName' because 
+it is an empty string.
+At line:1 char:1
++ .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseSt ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,EnableDiag.ps1
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot bind argument to parameter 'SubscriptionName' because it is an empty string.
+At line:1 char:1
++ .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseSt ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,EnableDiag.ps1
+
+PS C:\temp\azure-enable-diagnostics-master> Login-AzureRmAccount
+Login-AzureRmAccount : authentication_canceled: User canceled authentication
+At line:1 char:1
++ Login-AzureRmAccount
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Add-AzureRmAccount], AadAuthenticationCanceledException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.AddAzureRMAccountCommand
+Login-AzureRmAccount : authentication_canceled: User canceled authentication
+At line:1 char:1
++ Login-AzureRmAccount
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Add-AzureRmAccount], AadAuthenticationCanceledException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.AddAzureRMAccountCommand
+
+PS C:\temp\azure-enable-diagnostics-master> Get-AzureRmSubscription -SubscriptionName "Retail-Development"
+
+
+Name     : Retail-Development
+Id       : 2a7e4e73-efd2-414d-a3e7-9e84b79e4eb8
+TenantId : 123913b9-915d-4d67-aaf9-ce327e8fc59f
+State    : Enabled
+
+
+
+PS C:\temp\azure-enable-diagnostics-master> .\EnableDiag.ps1 -DeploymentModel Arm -ChooseSubscription -ChooseStorage
+**********************
+Windows PowerShell transcript end
+End time: 20180426100925
+**********************

@@ -1,0 +1,83 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180426093813
+Username: SYED-SP4\Syed
+RunAs User: SYED-SP4\Syed
+Configuration Name: 
+Machine: SYED-SP4 (Microsoft Windows NT 10.0.16299.0)
+Host Application: C:\WINDOWS\syswow64\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 17000
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\temp\azure-enable-diagnostics-master/logs/20180425T2338134356287Z_log.txt
+Found 19 subscriptions
+PS C:\temp\azure-enable-diagnostics-master> TerminatingError(CreateSubscriptionResultObject): "Cannot bind argument to parameter 'SubscriptionName' because it is an empty string."
+>> TerminatingError(EnableDiag.ps1): "Cannot bind argument to parameter 'SubscriptionName' because it is an empty string."
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot bind argument to parameter 'SubscriptionName' because 
+it is an empty string.
+At line:1 char:1
++ .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseVM ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,EnableDiag.ps1
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot bind argument to parameter 'SubscriptionName' because it is an empty string.
+At line:1 char:1
++ .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseVM ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,EnableDiag.ps1
+
+PS C:\temp\azure-enable-diagnostics-master> EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseVM -ChooseStorage
+
+
+
+Unblock-File EnableDiag.ps1
+Unblock-File ArmModule.ps1
+Unblock-File ClassicModule.ps1
+Unblock-File CommonModule.ps1
+EnableDiag.ps1 : The term 'EnableDiag.ps1' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:1
++ EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseVM - ...
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (EnableDiag.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+EnableDiag.ps1 : The term 'EnableDiag.ps1' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or
+if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseVM - ...
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (EnableDiag.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\temp\azure-enable-diagnostics-master> .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription 'Retail-Development' -ChooseStorage -ChooseVM
+>> TerminatingError(EnableDiag.ps1): "Cannot validate argument on parameter 'OsType'. The argument "Retail-Development" does not belong to the set "Windows,Linux" specified by the ValidateSet attribute. Supply an argument that is in the set and then try the command again."
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot validate argument on parameter 'OsType'. The argument 
+"Retail-Development" does not belong to the set "Windows,Linux" specified by the ValidateSet attribute. Supply an 
+argument that is in the set and then try the command again.
+At line:1 char:61
++ ... eploymentModel 'ARM' -ChooseSubscription 'Retail-Development' -Choose ...
++                                              ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,EnableDiag.ps1
+C:\temp\azure-enable-diagnostics-master\EnableDiag.ps1 : Cannot validate argument on parameter 'OsType'. The argument "Retail-Development" does not belong to the set
+"Windows,Linux" specified by the ValidateSet attribute. Supply an argument that is in the set and then try the command again.
+At line:1 char:61
++ ... eploymentModel 'ARM' -ChooseSubscription 'Retail-Development' -Choose ...
++                                              ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [EnableDiag.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,EnableDiag.ps1
+
+PS C:\temp\azure-enable-diagnostics-master> .\EnableDiag.ps1 –DeploymentModel 'ARM' -ChooseSubscription -ChooseStorage -ChooseVM
+**********************
+Windows PowerShell transcript end
+End time: 20180426094033
+**********************
