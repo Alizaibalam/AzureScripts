@@ -1,0 +1,97 @@
+{
+  "if": {
+    "allof": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Compute/VirtualMachines"
+      },
+      {
+        "anyOf": [
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Basic_A0"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Basic_A1"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Basic_A2"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Basic_A3"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Basic_A4"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_D1"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_D2"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_D3"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_D4"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_D11"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_D12"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_D13"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_D14"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_NV6"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_NV12"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_NV24"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_NC6"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_NC12"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_NC24"
+          },
+          {
+            "field": "Microsoft.Compute/VirtualMachines/sku.name",
+            "equals": "Standard_NC24r"
+          }
+        ]
+      }
+    ]
+  },
+  "then": {
+    "effect": "audit"
+  }
+}
