@@ -1,0 +1,53 @@
+{
+  "if": {
+    "allof": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Compute/VirtualMachines"
+      },
+      {
+        "anyOf": [
+          {
+            "field": "tags.CostCode",
+            "exists": "false"
+          },
+          {
+            "field": "tags.TechnicalOwner",
+            "exists": "false"
+          },
+          {
+            "field": "tags.BusinessOwner",
+            "exists": "false"
+          },
+          {
+            "field": "tags.Application",
+            "exists": "false"
+          },
+          {
+            "field": "tags.Environment",
+            "exists": "false"
+          },
+          {
+            "field": "tags.ScheduleType",
+            "exists": "false"
+          },
+          {
+            "field": "tags.SchedExemption",
+            "exists": "false"
+          },
+          {
+            "field": "tags.CustomSchedule",
+            "exists": "false"
+          },
+          {
+            "field": "tags.Project",
+            "exists": "false"
+          }
+        ]
+      }
+    ]
+  },
+  "then": {
+    "effect": "audit"
+  }
+}
