@@ -1,0 +1,25 @@
+{
+  "if": {
+    "allof": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Compute/VirtualMachines"
+      },
+      {
+        "anyOf": [
+          {
+            "field": "tags.BusinessOwner",
+            "exists": "false"
+          },
+          {
+            "field": "tags.Project",
+            "exists": "false"
+          }
+        ]
+      }
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
+}
