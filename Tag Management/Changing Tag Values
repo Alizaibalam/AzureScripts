@@ -1,0 +1,22 @@
+$rg =Get-AzureRmResourceGroup | Where-Object { $_.Tags.Keys -eq "Business-Owner2"}
+$rgtags = $rg.Tags
+$TagtoChange = @{Key="Business-Owner2";Value="abcd"}
+$newtag = @{}
+foreach ( $KVP in $rgtags.GetEnumerator() )
+   { 
+        
+        Write-Host "`n`n`n"
+        If($KVP.Key -eq $TagtoChange.Key)
+        { 
+          write-host $TagtoRemove.Key "exists in the "$rg.Name " will be removed `n"
+          $newtag.add("Business-Owner",$KVP.Value)
+          }
+
+        Else 
+        { 
+ 
+         $newtag.add($KVP.Key,$KVP.Value) # Adding all the tags in the $newtag Variable except the $TagtoRemove.key values 
+         }
+     }
+    #Updating the Virtual machine with the updated tag values $newtag.
+    Set-AzureRmResourceGroup -Name $rg.ResourceGroupName -Tag $newtag
