@@ -1,0 +1,34 @@
+$data = Import-Csv C:\temp\VMtags-retail-prod.csv
+
+$TagtoRemove = @{Key="CostCode";Value="abcd"}
+Start-Transcript C:\temp\Costcode-Retail-prod.txt
+foreach ($Record in $data)
+{
+    $VM = Get-AzureRmVM -Name $Record.VMName -ResourceGroupName $Record.ResourceGroup
+    $VMtags = $VM.tags # Getting the list of all the tags for the VM.
+    $newtag = @{} # Creating a new Hashtable variable to store the Tag Values.
+    foreach ( $KVP in $VMtags.GetEnumerator() )
+    { 
+         
+         If($KVP.Key -eq $TagtoRemove.Key)
+         { 
+           write-host $TagtoRemove.Key "exists in the "$VM.Name " will be updated" -ForegroundColor Yellow
+         }
+         Else 
+         {
+          Write-Host "Writing " $KVP.Key " to new Tag list " 
+          $newtag.add($KVP.Key,$KVP.Value) # Adding all the tags in the $newtag Variable except the $TagtoRemove.key values 
+         }
+         
+    }
+    Write-host " ****************************************************************"
+    $newtag.add('CostCode',$Record.NewCostCode)
+    Write-host " ********** Old Tags for Vm" $VM.Name "**********" -ForegroundColor Green
+    Write-Host ($VMtags| Out-String) -ForegroundColor Green
+    Write-host " ********** New Tags for Vm" $VM.Name "**********" -ForegroundColor Yellow
+    Write-Host ($newtag|Out-String) -ForegroundColor Yellow
+
+    Set-AzureRmResource -ResourceGroupName $VM.ResourceGroupName -ResourceName $VM.Name -Tag $newtag -Force -ResourceType Microsoft.Compute/VirtualMachines
+ }
+
+ Stop-Transcript
