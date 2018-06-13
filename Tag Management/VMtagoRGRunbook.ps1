@@ -26,32 +26,38 @@ $subs = Get-AzureRmSubscription -SubscriptionName Retail-Development
 foreach ( $sub in $subs)
 {
    write-output " Checking Subscription $($sub.Name)"
-   select-azurermsubscription -SubscriptionName $($sub.Name)
-   $rgs = Get-AzureRmResourceGroup
+   select-azurermsubscription -SubscriptionName $($sub.Name) | Out-Null
+   $rgs = Get-AzureRmResourceGroup -resourcegroupname test-resourcegroup
    foreach($rg in $rgs)
    {
         write-output "###################################################### "
-        write-output "$($rg.ResourceGroupName) : Checking Resource Group Group tags  $($($rg.tags).testname)"
-        IF(!$($($rg.tags).testname))
+        write-output "$($rg.ResourceGroupName) : Checking Resource Group Group tags "
+        IF(!($($($rg.tags).CostCode)))
         {
             write-output "$($rg.ResourceGroupName): No Cost Code Tag Found"
             write-output "$($rg.ResourceGroupName): Getting list of VMs in Resource Group"
-            $vms = Get-AzureRmVM -ResourceGroupName $($rg.ResourceGroupName)
+            $VMs = Get-AzureRmVM -ResourceGroupName $($rg.ResourceGroupName)
             If($vms)
             { 
-               write-output "$($rg.ResourceGroupName): $($vm.Count) VMs found in Resource Group. Checking for Cost Code" 
-               foreach ($vm in $vms)
+               write-output "$($rg.ResourceGroupName): $($vms.Count) VMs found in Resource Group. Checking for Cost Code" 
+               foreach ($vm in $VMS)
                { 
-                    If($($($vm.Tags).CostCode))
-                    { 
-                    $rgtags = $($rg.Tags)
-                    $rgtags.add("CostCode","$($($vm.Tags).CostCode)")
+                    write-output "$($rg.ResourceGroupName): Checking VM $($vm.Name) for Cost Code : $($($vm.tags).CostCode) "
+                    If(($($($vm.tags).CostCode)))
+                    {
+                    write-output "Adding the Cost code $($($vm.tags).CostCode) to the Resource Group $($rg.ResourceGroupName): "
+                    $rgtags = ($($rg.Tags))
+                    $costcode = $($($vm.tags).CostCode)
+                    $rgtags.add("CostCode","$costcode")
                     Write-host "$($rg.ResourceGroupName): Updating Resource Group $($rg.ResourceGroupName) with Cost Code for VM $($vm.Name)"
-                    write-host "$($rgtags.CostCode)"
-                    #Set-AzureRmResourceGroup -Name $($rg.ResourceGroupName) -Tag $rgtags
-                    break
+                    write-host "($($rgtags.CostCode))"
+                    Set-AzureRmResourceGroup -Name $($rg.ResourceGroupName) -Tag $rgtags
+                    #break
                     }
+                    Else
+                    {
                     write-output " $($rg.ResourceGroupName): VM $($Vm.name) does not have cost code. Checking further..."
+                    }
                 }
             }
             Else
@@ -59,4 +65,10 @@ foreach ( $sub in $subs)
                 write-OUtput "$($rg.ResourceGroupName): No VMS found in the Resource Group"
             }   
         }
+        Else
+        {
+            write-output "$($rg.ResourceGroupName) : Cost Code $($($rg.tags).CostCode) is already assigned to the Resource Group. "
+        }
    }
+
+}
